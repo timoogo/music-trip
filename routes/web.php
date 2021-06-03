@@ -31,4 +31,5 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     })->name('dashboard');
 
     Route::get('/users', [UsersController::class, "index"])->name("users.index");
+    Route::get('/add', [UsersController::class, "create"])->name("users.create");
 });

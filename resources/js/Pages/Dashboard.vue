@@ -6,10 +6,68 @@
             </h2>
         </template>
 
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <welcome />
+        <div class="container mx-auto px-4 sm:px-8">
+            <div class="py-8">
+                <div class="flex justify-end">
+                    <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">AJOUTER</a>
+                </div>
+                <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+                    <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+                        <table class="min-w-max w-full table-auto">
+                            <thead>
+                            <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                                <th class="py-3 px-3 text-center">N°</th>
+                                <th class="py-3 px-3 text-left">Ville</th>
+                                <th class="py-3 px-3 text-center">Sections</th>
+                                <th class="py-3 px-3 text-center">Complété ?</th>
+                                <th class="py-3 px-3 text-center w-2/5">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody class="text-gray-600 text-sm font-light">
+                            <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
+                                <td class="py-3 px-6 text-center">
+                                    <div class="flex items-center">
+                                        <div class="mr-2">
+                                            <span class="font-medium">8</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-left">
+                                    <div class="flex items-center">
+                                        <div class="mr-2">
+                                            <span>Paris</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-left">
+                                    <div class="flex items-center justify-start">
+                                       <span class="bg-blue-700 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-100 rounded-full hover:shadow-lg hover:bg-gray-800">Ville</span>
+                                       <span class="bg-yellow-200 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-900 rounded-full hover:shadow-lg hover:bg-gray-800 hover:text-white">Groupe</span>
+                                       <span class="bg-gray-700 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-100 rounded-full hover:shadow-lg hover:bg-gray-800">Events</span>
+                                       <span class="bg-red-200 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-100 rounded-full hover:shadow-lg hover:bg-gray-800">Lieux</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-center">
+                                    <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Completed</span>
+                                </td>
+                                <td class="py-3 px-6 text-center">
+                                    <div class="flex item-center justify-evenly mx-0.5">
+                                        <div class="w-4 mx-2 transform hover:text-purple-500">
+                                            <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>
+                                        </div>
+                                        <div class="w-4 mx-2 transform hover:text-purple-500">
+                                            <a href="#" class="bg-black hover:bg-grey-700 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>
+                                        </div>
+                                        <div class="w-4 mx-2 transform hover:text-purple-500">
+                                            <a href="#" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">MODIFIER</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -27,3 +85,9 @@
         },
     }
 </script>
+<style scoped>
+div.flex.items-center.justify-center span{
+
+}
+
+</style>
