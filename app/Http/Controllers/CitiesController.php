@@ -4,32 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use function Symfony\Component\String\u;
 
-class UsersController extends Controller
+class CitiesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index ()
     {
-        return Inertia::render('Admin/Users', [
-            'users' => []
-        ]);
+        return Inertia::render('Admin/Cities');
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return Inertia::render('Admin/CRUD/Users/Create');
+    public function create(){
+        return Inertia::render('Admin/CRUD/Cities/Create');
     }
-
     /**
      * Store a newly created resource in storage.
      *

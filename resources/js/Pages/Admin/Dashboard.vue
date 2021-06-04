@@ -9,7 +9,8 @@
         <div class="container mx-auto px-4 sm:px-8">
             <div class="py-8">
                 <div class="flex justify-end">
-                    <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">AJOUTER</a>
+                    <inertia-link href="cities/create" class="uppercase bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">ajouter une ville</inertia-link>
+
                 </div>
                 <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                     <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
@@ -51,9 +52,9 @@
                                     <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Completed</span>
                                 </td>
                                 <td class="py-3 px-6 text-center">
-                                    <div class="flex item-center justify-evenly mx-0.5">
+                                    <div class="flex item-center justify-evenly mx-auto">
                                         <div class="w-4 mx-2 transform hover:text-purple-500">
-                                            <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>
+                                            <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">AJOUTER</a>
                                         </div>
                                         <div class="w-4 mx-2 transform hover:text-purple-500">
                                             <a href="#" class="bg-black hover:bg-grey-700 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>

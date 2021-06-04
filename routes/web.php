@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\CitiesController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -27,9 +28,12 @@ Route::get('/', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
+        return Inertia::render('Admin/Dashboard');
     })->name('dashboard');
 
     Route::get('/users', [UsersController::class, "index"])->name("users.index");
-    Route::get('/add', [UsersController::class, "create"])->name("users.create");
+    Route::get('/users/create', [UsersController::class, "create"])->name("users.create");
+
+    Route::get('/cities', [CitiesController::class, "index"])->name("cities.index");
+    Route::get('/cities/create', [CitiesController::class, "create"])->name("cities.create");
 });
