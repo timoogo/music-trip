@@ -85,12 +85,14 @@
 <script>
 import AppLayout from "@/Layouts/AppLayout";
 import Mediatheque from "@/Pages/Admin/Components/Mediatheque";
+import DraggableSection from "@/Pages/Sandbox/DraggableSection";
 
 export default {
     name: "Create",
     components:{
         AppLayout,
         Mediatheque,
+        DraggableSection
     },
     data(){
         return {
