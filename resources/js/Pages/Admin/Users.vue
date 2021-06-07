@@ -11,28 +11,45 @@
                     <div class="flex justify-end">
                         <inertia-link href="users/create" class="uppercase bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">ajouter un utilisateur</inertia-link>
                     </div>
-                    <div class="bg-white shadow-md rounded my-6">
-                        <table class="min-w-max w-full table-auto">
-                            <thead>
-                            <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                                <th class="py-3 px-3 text-center">ID</th>
-                                <th class="py-3 px-3 text-center">Mail</th>
-                                <th class="py-3 px-3 text-center">Ville attribuée</th>
-                                <th class="py-3 px-3 text-center">Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                    <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+                        <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+                            <div class="bg-white shadow-md rounded my-6">
+                            <table class="min-w-max w-full table-auto">
+                                <thead>
+                                <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-3 text-center">ID</th>
+                                    <th class="py-3 px-3 text-center">Mail</th>
+                                    <th class="py-3 px-3 text-center">Ville attribuée</th>
+                                    <th class="py-3 px-3 text-center">Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
                                 <tr class="text-gray-600 text-sm font-light">
                                     <td class="py-3 px-6 text-center">1</td>
                                     <td class="py-3 px-6 text-center">Mail@mail.fr</td>
                                     <td class="py-3 px-6 text-center">
-                                        <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Paris</span>
+                                        <span class="bg-black text-white py-1 px-3 rounded-full text-xs">Paris</span>
                                     </td>
-                                    <td class="py-3 px-6 text-center">yo</td>
+                                    <td class="py-3 px-6 text-center w-2/5">
+                                        <div class="flex item-center justify-evenly mx-auto">
+                                            <div class="w-4 mx-2 transform hover:text-purple-500">
+                                                <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">AJOUTER</a>
+                                            </div>
+                                            <div class="w-4 mx-2 transform hover:text-purple-500">
+                                                <a href="#" class="bg-black hover:bg-grey-700 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>
+                                            </div>
+                                            <div class="w-4 mx-2 transform hover:text-purple-500">
+                                                <a href="#" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">MODIFIER</a>
+                                            </div>
+                                        </div>
+                                    </td>
                                 </tr>
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
+                    </div>
+
                 </div>
             </div>
         </div>

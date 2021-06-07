@@ -30,6 +30,7 @@
                                 </td>
                                 <td class="py-3 px-6 text-center">yo</td>
                             </tr>
+
                             </tbody>
                         </table>
                     </div>

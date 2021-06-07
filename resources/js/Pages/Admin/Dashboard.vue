@@ -29,7 +29,7 @@
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex items-center">
                                         <div class="mr-2">
-                                            <span class="font-medium">8</span>
+                                            <span class="font-medium">1</span>
                                         </div>
                                     </div>
                                 </td>
@@ -37,6 +37,123 @@
                                     <div class="flex items-center">
                                         <div class="mr-2">
                                             <span>Paris</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-left">
+                                    <div class="flex items-center justify-start">
+                                       <span class="bg-blue-700 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-100 rounded-full hover:shadow-lg hover:bg-gray-800">Ville</span>
+                                       <span class="bg-yellow-200 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-900 rounded-full hover:shadow-lg hover:bg-gray-800 hover:text-white">Groupe</span>
+                                       <span class="bg-gray-700 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-100 rounded-full hover:shadow-lg hover:bg-gray-800">Events</span>
+                                       <span class="bg-red-200 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-100 rounded-full hover:shadow-lg hover:bg-gray-800">Lieux</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-center">
+                                    <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Completed</span>
+                                </td>
+                                <td class="py-3 px-6 text-center">
+                                    <div class="flex item-center justify-evenly mx-auto">
+                                        <div class="w-4 mx-2 transform hover:text-purple-500">
+                                            <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">AJOUTER</a>
+                                        </div>
+                                        <div class="w-4 mx-2 transform hover:text-purple-500">
+                                            <a href="#" class="bg-black hover:bg-grey-700 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>
+                                        </div>
+                                        <div class="w-4 mx-2 transform hover:text-purple-500">
+                                            <a href="#" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">MODIFIER</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>    <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
+                                <td class="py-3 px-6 text-center">
+                                    <div class="flex items-center">
+                                        <div class="mr-2">
+                                            <span class="font-medium">2</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-left">
+                                    <div class="flex items-center">
+                                        <div class="mr-2">
+                                            <span>La Rochelle</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-left">
+                                    <div class="flex items-center justify-start">
+                                       <span class="bg-blue-700 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-100 rounded-full hover:shadow-lg hover:bg-gray-800">Ville</span>
+                                       <span class="bg-yellow-200 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-900 rounded-full hover:shadow-lg hover:bg-gray-800 hover:text-white">Groupe</span>
+                                       <span class="bg-gray-700 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-100 rounded-full hover:shadow-lg hover:bg-gray-800">Events</span>
+                                       <span class="bg-red-200 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-100 rounded-full hover:shadow-lg hover:bg-gray-800">Lieux</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-center">
+                                    <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Completed</span>
+                                </td>
+                                <td class="py-3 px-6 text-center">
+                                    <div class="flex item-center justify-evenly mx-auto">
+                                        <div class="w-4 mx-2 transform hover:text-purple-500">
+                                            <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">AJOUTER</a>
+                                        </div>
+                                        <div class="w-4 mx-2 transform hover:text-purple-500">
+                                            <a href="#" class="bg-black hover:bg-grey-700 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>
+                                        </div>
+                                        <div class="w-4 mx-2 transform hover:text-purple-500">
+                                            <a href="#" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">MODIFIER</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>    <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
+                                <td class="py-3 px-6 text-center">
+                                    <div class="flex items-center">
+                                        <div class="mr-2">
+                                            <span class="font-medium">3</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-left">
+                                    <div class="flex items-center">
+                                        <div class="mr-2">
+                                            <span>Nantes</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-left">
+                                    <div class="flex items-center justify-start">
+                                       <span class="bg-blue-700 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-100 rounded-full hover:shadow-lg hover:bg-gray-800">Ville</span>
+                                       <span class="bg-yellow-200 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-900 rounded-full hover:shadow-lg hover:bg-gray-800 hover:text-white">Groupe</span>
+                                       <span class="bg-gray-700 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-100 rounded-full hover:shadow-lg hover:bg-gray-800">Events</span>
+                                       <span class="bg-red-200 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-100 rounded-full hover:shadow-lg hover:bg-gray-800">Lieux</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-center">
+                                    <span class="bg-yellow-200 text-yellow-700 py-1 px-3 rounded-full text-xs" title="Les sections [Ville], et [Groupe] sont manquantes">Uncompleted</span>
+                                </td>
+                                <td class="py-3 px-6 text-center">
+                                    <div class="flex item-center justify-evenly mx-auto">
+                                        <div class="w-4 mx-2 transform hover:text-purple-500">
+                                            <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">AJOUTER</a>
+                                        </div>
+                                        <div class="w-4 mx-2 transform hover:text-purple-500">
+                                            <a href="#" class="bg-black hover:bg-grey-700 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>
+                                        </div>
+                                        <div class="w-4 mx-2 transform hover:text-purple-500">
+                                            <a href="#" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">MODIFIER</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>    <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
+                                <td class="py-3 px-6 text-center">
+                                    <div class="flex items-center">
+                                        <div class="mr-2">
+                                            <span class="font-medium">4</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-left">
+                                    <div class="flex items-center">
+                                        <div class="mr-2">
+                                            <span>Lille</span>
                                         </div>
                                     </div>
                                 </td>
