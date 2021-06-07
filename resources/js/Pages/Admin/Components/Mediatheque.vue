@@ -64,6 +64,48 @@
                             <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
                             <span class="ml-2">Lien YT</span>
                         </label>
+                        <label class="inline-flex items-center" for="heart" v-if="checked['locations']">
+                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                            <span class="ml-2">Photos (city)</span>
+                        </label>
+                        <!--videos-->
+                        <label class="inline-flex items-center" for="heart" v-if="checked['locations']">
+                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                            <span class="ml-2">Videos</span>
+                        </label>
+                        <!--YT-->
+                        <label class="inline-flex items-center" for="heart" v-if="checked['locations']">
+                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                            <span class="ml-2">Lien YT</span>
+                        </label>
+                        <label class="inline-flex items-center" for="heart" v-if="checked['groups']">
+                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                            <span class="ml-2">Photos (city)</span>
+                        </label>
+                        <!--videos-->
+                        <label class="inline-flex items-center" for="heart" v-if="checked['groups']">
+                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                            <span class="ml-2">Videos</span>
+                        </label>
+                        <!--YT-->
+                        <label class="inline-flex items-center" for="heart" v-if="checked['groups']">
+                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                            <span class="ml-2">Lien YT</span>
+                        </label>
+                        <label class="inline-flex items-center" for="heart" v-if="checked['custom']">
+                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                            <span class="ml-2">Photos (city)</span>
+                        </label>
+                        <!--videos-->
+                        <label class="inline-flex items-center" for="heart" v-if="checked['custom']">
+                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                            <span class="ml-2">Videos</span>
+                        </label>
+                        <!--YT-->
+                        <label class="inline-flex items-center" for="heart" v-if="checked['custom']">
+                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                            <span class="ml-2">Lien YT</span>
+                        </label>
                     </div>
                 </div>
             </div>

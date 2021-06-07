@@ -1,5 +1,5 @@
 <template>
-    <div class="drop-zone"
+<!--    <div class="drop-zone"
          @drop="onDrop(@event, 1)"
             @dragenter="prevent"
             @dragover="prevent">
@@ -10,7 +10,7 @@
         <div v-for="item in getList(2)" :key="item.id" class="drag-el" draggable="true" @dragstart="startDrag($event, item)">
             {{item.title}}
         </div>
-    </div>
+    </div>-->
 </template>
 
 <script>
