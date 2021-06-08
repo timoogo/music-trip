@@ -20,7 +20,25 @@
                         <div class="pl-8 pr-8 pb-5 text-grey-darkest">
                             <ul class="pl-4">
                                 <li class="pb-2">
-                                    {{ content }}
+                                    <div class="col-span-6 sm:col-span-4">
+                                        <label class="block font-medium text-sm text-gray-700" for="title">
+                                            <span>Titre</span></label>
+                                        <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="title" type="text" autocomplete="name">
+                                        <div class="mt-2" style="display: none;">
+                                            <p class="text-sm text-red-600"></p>
+                                        </div>
+                                    </div>
+                                   <div class="hidden"> {{ content }}</div>
+                                </li>
+                                <li class="pb-2 mt-8 mb-16">
+                                    <div class="col-span-6 sm:col-span-4">
+                                        <label class="block font-medium text-sm text-gray-700" for="description">
+                                            <span>Description</span></label>
+                                        <textarea class="h-40 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="description" autocomplete="name"></textarea>
+                                        <div class="mt-2" style="display: none;">
+                                            <p class="text-sm text-red-600"></p>
+                                        </div>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
