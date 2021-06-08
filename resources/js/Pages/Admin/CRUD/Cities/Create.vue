@@ -51,6 +51,8 @@
                         </div>
                     </div>
                 </div>
+
+                <SectionHolder/>
                 <!--  -->
 
                 <div class="md:grid md:grid-cols-3 md:gap-6">
@@ -86,13 +88,16 @@
 import AppLayout from "@/Layouts/AppLayout";
 import Mediatheque from "@/Pages/Admin/Components/Mediatheque";
 import DraggableSection from "@/Pages/Sandbox/DraggableSection";
+import SectionHolder from "@/Pages/Admin/Components/SectionHolder";
 
 export default {
     name: "Create",
     components:{
+        SectionHolder,
         AppLayout,
         Mediatheque,
-        DraggableSection
+
+      //  DraggableSection
     },
     data(){
         return {
