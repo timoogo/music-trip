@@ -12,98 +12,102 @@
                 <div class="flex flex-col h-48 ml-4 justify-between max-w-max ">
                     <div class="toto">
                         <label class="inline-flex items-center" for="heart">
-                            <input v-model="checked['heart']" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="heart">
+                            <input v-model="checked.heart.global" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="heart">
                             <span class="ml-2">Coup de coeur</span>
                         </label>
                     </div>
                     <label class="inline-flex items-center" for="city">
-                        <input v-model="checked['city']" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="city">
+                        <input v-model="checked.city.global" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="city">
                         <span class="ml-2">Ville</span>
                     </label>
                     <label class="inline-flex items-center" for="locations">
-                        <input v-model="checked['locations']" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="locations">
+                        <input v-model="checked.location.global" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="locations">
                         <span class="ml-2">Lieux</span>
                     </label>
                     <label class="inline-flex items-center" for="groups">
-                        <input  v-model="checked['groups']" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="groups">
+                        <input  v-model="checked.group.global" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="groups">
                         <span class="ml-2">Groupes</span>
                     </label>
                     <label class="inline-flex items-center" for="custom">
-                        <input v-model="checked['custom']" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="custom">
+                        <input v-model="checked.custom.global" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="custom">
                         <span class="ml-2">Custom</span>
                     </label>
                 </div>
                 <div class="flex flex-col h-48 ml-24 justify-between max-w-max">
                     <div class="flex flex-row justify-evenly w-108">
                         <!--ici-->
-                        <label class="inline-flex items-center" for="heart" v-if="checked['heart']">
-                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                        <label class="inline-flex items-center" for="heart-section_photos" v-if="checked.heart.global">
+                            <input v-model="checked.heart.photos" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="heart-section_photos">
                             <span class="ml-2">Photos (heart)</span>
                         </label>
                         <!--videos-->
-                        <label class="inline-flex items-center" for="heart" v-if="checked['heart']">
-                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                        <label class="inline-flex items-center" for="heart-section_videos" v-if="checked.heart.global">
+                            <input v-model="checked.heart.videos" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="heart-section_videos">
                             <span class="ml-2">Videos</span>
                         </label>
                         <!--YT-->
-                        <label class="inline-flex items-center" for="heart" v-if="checked['heart']">
-                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                        <label class="inline-flex items-center" for="heart-section_yt" v-if="checked.heart.global">
+                            <input v-model="checked.heart.yt" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="heart-section_yt">
                             <span class="ml-2">Lien YT</span>
                         </label>
-                        <label class="inline-flex items-center" for="heart" v-if="checked['city']">
-                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                                                                      <!--city-->
+                        <label class="inline-flex items-center" for="city-section_photos" v-if="checked.city.global">
+                            <input v-model="checked.city.photos" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="city-section_photos">
                             <span class="ml-2">Photos (city)</span>
                         </label>
                         <!--videos-->
-                        <label class="inline-flex items-center" for="heart" v-if="checked['city']">
-                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                        <label class="inline-flex items-center" for="city-section_videos" v-if="checked.city.global">
+                            <input v-model="checked.city.videos" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="city-section_videos">
                             <span class="ml-2">Videos</span>
                         </label>
                         <!--YT-->
-                        <label class="inline-flex items-center" for="heart" v-if="checked['city']">
-                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                        <label class="inline-flex items-center" for="city-section_yt" v-if="checked.city.global">
+                            <input v-model="checked.city.yt" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="city-section_yt">
                             <span class="ml-2">Lien YT</span>
                         </label>
-                        <label class="inline-flex items-center" for="heart" v-if="checked['locations']">
-                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                                                                    <!--LOCATION-->
+                        <label class="inline-flex items-center" for="locations-section_photos" v-if="checked.location.global">
+                            <input v-model="checked.location.photos" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="locations-section_photos">
                             <span class="ml-2">Photos (city)</span>
                         </label>
                         <!--videos-->
-                        <label class="inline-flex items-center" for="heart" v-if="checked['locations']">
-                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                        <label class="inline-flex items-center" for="locations-section_videos" v-if="checked.location.global">
+                            <input v-model="checked.location.videos" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="locations-section_videos">
                             <span class="ml-2">Videos</span>
                         </label>
                         <!--YT-->
-                        <label class="inline-flex items-center" for="heart" v-if="checked['locations']">
-                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                        <label class="inline-flex items-center" for="locations-section_yt" v-if="checked.location.global">
+                            <input v-model="checked.location.yt" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="locations-section_yt">
                             <span class="ml-2">Lien YT</span>
                         </label>
-                        <label class="inline-flex items-center" for="heart" v-if="checked['groups']">
-                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                                                                <!--GROUPS-->
+                        <label class="inline-flex items-center" for="groups-section_photos" v-if="checked.group.global">
+                            <input v-model="checked.group.photos" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="groups-section_photos">
                             <span class="ml-2">Photos (city)</span>
                         </label>
                         <!--videos-->
-                        <label class="inline-flex items-center" for="heart" v-if="checked['groups']">
-                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                        <label class="inline-flex items-center" for="groups-section_videos" v-if="checked.group.global">
+                            <input v-model="checked.group.videos" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="groups-section_videos">
                             <span class="ml-2">Videos</span>
                         </label>
                         <!--YT-->
-                        <label class="inline-flex items-center" for="heart" v-if="checked['groups']">
-                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                        <label class="inline-flex items-center" for="groups-section_yt" v-if="checked.group.global">
+                            <input v-model="checked.group.yt" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="groups-section_yt">
                             <span class="ml-2">Lien YT</span>
                         </label>
-                        <label class="inline-flex items-center" for="heart" v-if="checked['custom']">
-                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                                                            <!--CUSTOM-->
+                        <label class="inline-flex items-center" for="custom-section-photos" v-if="checked.custom.global">
+                            <input v-model="checked.custom.photos" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="custom-section-photos">
                             <span class="ml-2">Photos (city)</span>
                         </label>
                         <!--videos-->
-                        <label class="inline-flex items-center" for="heart" v-if="checked['custom']">
-                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                        <label class="inline-flex items-center" for="custom-section-videos" v-if="checked.custom.global">
+                            <input v-model="checked.custom.videos" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="custom-section-videos">
                             <span class="ml-2">Videos</span>
                         </label>
                         <!--YT-->
-                        <label class="inline-flex items-center" for="heart" v-if="checked['custom']">
-                            <input type="checkbox" class="form-checkbox text-indigo-600 rounded" id="">
+                        <label class="inline-flex items-center" for="custom-section-yt" v-if="checked.custom.global">
+                            <input v-model="checked.custom.yt" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="custom-section-yt">
                             <span class="ml-2">Lien YT</span>
                         </label>
                     </div>
@@ -125,11 +129,36 @@ name: "Mediatheque",
     data(){
     return{
         checked: {
-            heart: false,
-            city:false,
-            locations:false,
-            groups:false,
-            custom:false,
+            heart:{
+                global:false,
+                photos:false,
+                videos:false,
+                yt:false
+            },
+            city:{
+                global: false,
+                photos:false,
+                videos:false,
+                yt:false
+            },
+            location:{
+                global:false,
+                photos:false,
+                videos:false,
+                yt:false
+            },
+            group:{
+                global: false,
+                photos:false,
+                videos:false,
+                yt:false
+            },
+            custom:{
+                global:false,
+                photos:false,
+                videos:false,
+                yt:false
+            },
         },
     }
     }

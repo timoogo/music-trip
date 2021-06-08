@@ -34,7 +34,38 @@ export default {
     components: {SectionContent},
     data () {
         return {
-
+            mediaChecked:{
+                heart:{
+                    global:false,
+                    photos:false,
+                    videos:false,
+                    yt:false
+                },
+                city:{
+                    global: false,
+                    photos:false,
+                    videos:false,
+                    yt:false
+                },
+                location:{
+                    global:false,
+                    photos:false,
+                    videos:false,
+                    yt:false
+                },
+                group:{
+                    global: false,
+                    photos:false,
+                    videos:false,
+                    yt:false
+                },
+                custom:{
+                    global:false,
+                    photos:false,
+                    videos:false,
+                    yt:false
+                },
+            }
         }
     },
 
