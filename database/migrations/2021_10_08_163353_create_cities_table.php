@@ -15,7 +15,7 @@ class CreateCitiesTable extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('city_id');
+            $table->foreignId('city_id')->constrained()->onDelete('cascade');
 
             $table->foreignId('chron_favorite_id')->constrained()->onDelete('cascade'); //NE MARCHE PAS
             $table->foreignId('location_id')->constrained()->onDelete('cascade');// NE MARCHE PAS
