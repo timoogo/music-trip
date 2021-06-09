@@ -10,8 +10,6 @@ class Sandbox extends Controller
 {
     public function index()
     {
-        return Inertia::render('Sandbox/Test', [
-            '' => []
-        ]);
+        return Inertia::render('Sandbox/Test');
     }
 }

@@ -1,10 +1,12 @@
 <template>
+
     <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Création d'une ville
             </h2>
         </template>
+
         <div class="min-h-screen bg-gray-100">
             <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
                 <div>
@@ -60,6 +62,7 @@
 
                 <!--  -->
                 <Mediatheque/>
+                <PublishConfirmation/>
             </div>
         </div>
     </app-layout>
@@ -69,10 +72,12 @@ import AppLayout from "@/Layouts/AppLayout";
 import Mediatheque from "@/Pages/Admin/Components/Mediatheque";
 import DraggableSection from "@/Pages/Sandbox/DraggableSection";
 import SectionHolder from "@/Pages/Admin/Components/SectionHolder";
+import PublishConfirmation from "@/Pages/Admin/Components/PublishConfirmation";
 
 export default {
     name: "Create",
     components:{
+        PublishConfirmation,
         SectionHolder,
         AppLayout,
         Mediatheque,

@@ -36,6 +36,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/cities', [CitiesController::class, "index"])->name("cities.index");
     Route::get('/cities/create', [CitiesController::class, "create"])->name("cities.create");
-    Route::get('/test', [\App\Http\Controllers\Sandbox::class, "index"])->name("sandbox.index");
+   // Route::get('/test', [\App\Http\Controllers\Sandbox::class, "index"])->name("sandbox.index");
 
 });
