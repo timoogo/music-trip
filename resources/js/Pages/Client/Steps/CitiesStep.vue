@@ -1,22 +1,37 @@
 <template>
     <ul>
-        <li>Paris</li>
-        <li>La Rochelle</li>
-        <li>Nantes</li>
-        <li>Lille</li>
-        <li>Paris</li>
-        <li>Paris</li>
-        <li>Paris</li>
-        <li>Paris</li>
-        <li>Paris</li>
-        <li>Paris</li>
-        <li>Paris</li>
+        <li @click="onClick" v-for="city in cities">{{ city }}</li>
     </ul>
 </template>
 
 <script>
 export default {
-name: "CitiesStep"
+name: "CitiesStep",
+
+    data(){
+    return{
+        cities:{
+            0: "Paris",
+            1: "La Rochelle",
+            2: "Nantes",
+            3:"Lille",
+            4:"Nevers",
+            5:"Bourges",
+            6:"Limoges",
+            7:"St-Germain En Laye",
+            8: "Montreuil",
+            9: "Rennes",
+            10:"Avignon",
+            11:"Gronoble",
+            12: "Nantes"
+        }
+    }
+    },
+    methods:{
+    onClick(cityName){
+        console.log(cityName);
+    }
+    }
 }
 </script>
 
@@ -41,8 +56,6 @@ name: "CitiesStep"
                 width: 50%;
             }
         }
-        & li:nth-child(4) ~ li{
-            display: none;
-        }
+
     }
 </style>
