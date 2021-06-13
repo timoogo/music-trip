@@ -1,0 +1,83 @@
+{
+    "cities": [
+        {
+            "id": 0,
+            "name": "Paris",
+            "lng": "2.20",
+            "lat": "48.866667"
+        },
+        {
+            "id": 1,
+            "name": "La Rochelle",
+            "lng": -1.09,
+            "lat": 46.1591126
+        },
+        {
+            "id": 2,
+            "name": "Nantes",
+            "lng": -1.33,
+            "lat": 47.2186371
+        },
+        {
+            "id": 3,
+            "name": "Lille",
+            "lng": 3.03,
+            "lat": 50.6365654
+        },
+        {
+            "id": 4,
+            "name": "Nevers",
+            "lng": 3.09,
+            "lat": 46.9876601
+        },
+        {
+            "id": 5,
+            "name": "Bourges",
+            "lng": "2.25",
+            "lat": "47.0805693"
+        },
+        {
+            "id": 6,
+            "name": "Limoges",
+            "lng": "1.15",
+            "lat": "45.8354243"
+        },
+        {
+            "id": 7,
+            "name": "St-Germain En Laye",
+            "lng": 2.0833,
+            "lat": 48.9356047
+        },
+        {
+            "id": 8,
+            "name": "Montreuil",
+            "lng": 2.448451,
+            "lat": 50.4638918
+        },
+        {
+            "id": 9,
+            "name": "Rennes",
+            "lng": -1.6777926,
+            "lat": 48.1113387
+        },
+        {
+            "id": 10,
+            "name": "Avignon",
+            "lng": 4.80559,
+            "lat": 43.9492493
+        },
+        {
+            "id": 11,
+            "name": "Grenoble",
+            "lng": "5.724524",
+            "lat": "45.1875602"
+        },
+        {
+                "id":12,
+                "name": "Nantes",
+                "lng": 5.724524,
+                "lat": 47.2186371
+
+        }
+    ]
+}

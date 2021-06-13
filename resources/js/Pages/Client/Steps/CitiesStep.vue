@@ -1,38 +1,133 @@
 <template>
-    <ul>
-        <li @click="onClick" v-for="city in cities">{{ city }}</li>
+    <ul v-if="!active">
+        <li class="cursor-pointer"  @click="showCity"  v-for="city in cities">{{ city.name }}</li>
     </ul>
 </template>
 
 <script>
 export default {
-name: "CitiesStep",
+    name: "CitiesStep",
 
-    data(){
-    return{
-        cities:{
-            0: "Paris",
-            1: "La Rochelle",
-            2: "Nantes",
-            3:"Lille",
-            4:"Nevers",
-            5:"Bourges",
-            6:"Limoges",
-            7:"St-Germain En Laye",
-            8: "Montreuil",
-            9: "Rennes",
-            10:"Avignon",
-            11:"Gronoble",
-            12: "Nantes"
+    data() {
+        return {
+            cities: [],
+            whatIsSelected:[],
+            active:false,
+
+           /* cities: {
+                0: {
+                    id:0,
+                    name: "Paris",
+                    lng: "2.20",
+                    lat: "48.866667",
+                },
+                1: {
+                    id:1,
+                    name: "La Rochelle",
+                    lng: -1.09,
+                    lat: 46.1591126,
+                },
+                2: {
+                    id:2,
+                    name: "Nantes",
+                    lng: -1.33,
+                    lat: 47.2186371,
+                },
+                3: {
+                    id:3,
+                    name: "Lille",
+                    lng: 3.03,
+                    lat: 50.6365654,
+                },
+                4: {
+                    id:4,
+                    name: "Nevers",
+                    lng: 3.09,
+                    lat: 46.9876601,
+                },
+                5: {
+                    id:5,
+                    name: "Bourges",
+                    lng: "2.25",
+                    lat: "47.0805693",
+                },
+                6: {
+                    id:6,
+                    name: "Limoges",
+                    lng: "1.15",
+                    lat: "45.8354243",
+                },
+                7: {
+                    id:7,
+                    name: "St-Germain En Laye",
+                    lng: 2.0833,
+                    lat: 48.9356047,
+                },
+                8: {
+                    id:8,
+                    name: "Montreuil",
+                    lng: 2.448451,
+                    lat: 50.4638918,
+                },
+                9: {
+                    id:9,
+                    name: "Rennes",
+                    lng: -1.6777926,
+                    lat: 48.1113387,
+                },
+                10: {
+                    id:10,
+                    name: "Avignon",
+                    lng: 4.80559,
+                    lat: 43.9492493,
+                },
+                11: {
+                    id:11,
+                    name: "Grenoble",
+                    lng: "5.724524",
+                    lat: "45.1875602",
+                },
+                12: {
+                    id:12,
+                    name: "Nantes",
+                    lng: 5.724524,
+                    lat: 47.2186371,
+                },
+
+            },
+*/
         }
-    }
     },
-    methods:{
-    onClick(cityName){
-        console.log(cityName);
+   methods:{
+        showCity: function(event) {
+
+           let value = event.currentTarget.id;
+
+
+          console.log(value)
+
+        this.clicked()
+
+        },
+       clicked() {
+        this.active = !this.active
+       },
+
+
+
+
+   },
+    props:['action'],
+    mounted() {
+        fetch('http://localhost:3000/cities')
+            .then((res)=>res.json())
+            .then(data =>this.cities = data)
+            .catch(err =>console.log(err.message()))
     }
-    }
+
 }
+
+
 </script>
 
 <style scoped lang="scss">

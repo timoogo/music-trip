@@ -1,6 +1,6 @@
 <template>
    <aside>
-       <CitiesStep></CitiesStep>
+       <CitiesStep v-bind:is-selected="true"></CitiesStep>
    </aside>
 </template>
 
@@ -9,6 +9,12 @@ import CitiesStep from "@/Pages/Client/Steps/CitiesStep";
 export default {
 name: "MusicTripAside",
     components: {CitiesStep},
+    data (){
+    return{
+        currentComponent: null,
+        componentsArray: ['cities', 'sections', 'single'],
+    }
+    }
 }
 </script>
 
