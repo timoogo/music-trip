@@ -24,11 +24,23 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="text-gray-600 text-sm font-light">
-                                    <td class="py-3 px-6 text-center">1</td>
-                                    <td class="py-3 px-6 text-center">Mail@mail.fr</td>
-                                    <td class="py-3 px-6 text-center">
-                                        <span class="bg-black text-white py-1 px-3 rounded-full text-xs">Paris</span>
+                                <tr v-for="user in users[0]" :key="users[0]" class="text-gray-600 text-sm font-light">
+                                    <td class="py-3 px-6 text-center">{{ user.id }} </td>
+                                    <td class="py-3 px-6 text-center">{{ user.email }}</td>
+                                    <td class="py-3 px-6 text-center" v-if="user.which_city_id != null">
+                                        <span class="bg-black text-white py-1 px-3 rounded-full text-xs">
+                                            {{ user.which_city_id }}
+                                        </span>
+
+                                    </td>
+                                    <td class="py-3 px-6 text-center" v-else>
+                                        <span class="bg-black text-white py-1 px-3 rounded-full text-xs">
+                                            Pas assigné
+                                        </span>
+
+                                    </td>
+                                    <td class="py-3 px-6 text-center" v-else>
+                                        <span class="bg-black text-white py-1 px-3 rounded-full text-xs">Pas attribué</span>
                                     </td>
                                     <td class="py-3 px-6 text-center w-2/5">
                                         <div class="flex item-center justify-evenly mx-auto">
@@ -46,11 +58,14 @@
                                 </tr>
                                 </tbody>
                             </table>
+
                         </div>
                     </div>
                     </div>
-
+                   <code>{{users}}</code>
+                    <h2>{{Object.keys(this.users).length}}</h2>
                 </div>
+
             </div>
         </div>
     </app-layout>
@@ -65,5 +80,11 @@
             AppLayout,
             Welcome,
         },
+        props:{
+            users:Object,
+            cities:Object
+
+        },
+
     }
 </script>

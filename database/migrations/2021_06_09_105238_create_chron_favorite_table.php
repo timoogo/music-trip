@@ -18,11 +18,11 @@ class CreateChronFavoriteTable extends Migration
 
             $table->string('title')->nullable();
             $table->string('description')->nullable();
-            $table->boolean('has_img' )->default(true);
+            $table->boolean('has_img' )->default(false);
             $table->string('img_src')->nullable();
-            $table->boolean('has_video' )->default(true);
+            $table->boolean('has_video' )->default(false);
             $table->string('video_src')->nullable();
-            $table->boolean('has_yt' )->default(true);
+            $table->boolean('has_yt' )->default(false);
             $table->string('yt_src')->nullable();
             $table->timestamps();
         });
@@ -30,7 +30,7 @@ class CreateChronFavoriteTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
+     *2	TIMOTHEE GAULTIER	timogo@timogo.fr	NULL	$2y$10$oDjBJ9EIA7Rsop/PVYuUf.uF5SmBly51WKVB/SUXZIV4Ws6HPVwgm	NULL	2	NULL	2021-06-14 08:17:05	2021-06-14 08:17:05
      * @return void
      */
     public function down()

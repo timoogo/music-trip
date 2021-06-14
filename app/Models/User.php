@@ -27,6 +27,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'which_city_id',
     ];
 
     /**
@@ -39,6 +40,11 @@ class User extends Authenticatable
         'remember_token',
         'two_factor_recovery_codes',
         'two_factor_secret',
+        'email_verified_at',
+        'profile_photo_path',
+        'created_at',
+        'updated_at',
+        'profile_photo_url'
     ];
 
     /**

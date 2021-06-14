@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Models\User;
 use function Symfony\Component\String\u;
 
 class UsersController extends Controller
@@ -15,9 +17,20 @@ class UsersController extends Controller
      */
     public function index()
     {
+        $users = User::all()->except(
+            'password',
+            'remember_token',
+            'two_factor_recovery_codes',
+            'two_factor_secret',
+
+        );
+        $cities = City::all();
         return Inertia::render('Admin/Users', [
-            'users' => []
+        'users' => [$users],
+            'cities' => [$cities]
         ]);
+
+       // return Inertia::render('Admin/Users', [$users]);
     }
 
     /**

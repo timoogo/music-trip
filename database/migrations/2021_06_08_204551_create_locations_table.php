@@ -17,13 +17,8 @@ class CreateLocationsTable extends Migration
             $table->id();
             $table->unsignedInteger('location_id');
             $table->string('title')->nullable();
-            $table->string('description')->nullable();
-            $table->boolean('has_img' )->default(true);
-            $table->string('img_src')->nullable();
-            $table->boolean('has_video' )->default(true);
-            $table->string('video_src')->nullable();
-            $table->boolean('has_yt' )->default(true);
-            $table->string('yt_src')->nullable();
+            $table->decimal('lng', 10, 7)->default("0.00");
+            $table->decimal('lat', 10, 7)->default("0.00");
             $table->timestamps();
         });
     }
