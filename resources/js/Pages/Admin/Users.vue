@@ -62,29 +62,40 @@
                         </div>
                     </div>
                     </div>
-                   <code>{{users}}</code>
-                    <h2>{{Object.keys(this.users).length}}</h2>
                 </div>
-
+                {{cities}}
             </div>
         </div>
     </app-layout>
 </template>
 
 <script>
-    import AppLayout from '@/Layouts/AppLayout'
-    import Welcome from '@/Jetstream/Welcome'
-
+    import AppLayout from '@/Layouts/AppLayout';
+    import Welcome from '@/Jetstream/Welcome';
+    import axios from 'axios';
     export default {
         components: {
             AppLayout,
             Welcome,
+        },
+        data(){
+            return {
+                pays:null
+            }
         },
         props:{
             users:Object,
             cities:Object
 
         },
+        mounted() {
+            axios
+            .get('https://restcountries.eu/rest/v2/all')
+            .then( (response) => {
+                this.pays = response;
+            })
+            console.log(this.pays)
+        }
 
     }
 </script>
