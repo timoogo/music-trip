@@ -8,7 +8,14 @@
         :options="mapStyle"
 >
         <Marker :id="index" :key="index" v-for="(m, index) in markers" :options="{position: m.position}" :clickable="true" :draggable="true"
-                :icon="m.icon"    @click="center = m.position" />
+                :icon="m.icon"    @click="center = m.position" >
+            <GMapInfoWindow
+                :opened="true"
+            >
+                <div>I am in info window
+                </div>
+            </GMapInfoWindow>
+        </Marker>
     </GoogleMap>
     </div>
 </template>
@@ -321,22 +328,29 @@ let mapStyle = [
 
 
 export default defineComponent({
-    components: { GoogleMap, Marker },
+    components: { GoogleMap, Marker,InfoWindow  },
+    methods:{
+      cityData(city){
+          let value = city.currentTarget;
+          console.log(value)
+        this.isSelected != this.isSelected
+      }
+    },
     data(){
         return{
+            isSelected:true,
             api_key:"AIzaSyAEU_oku2XWD_aTo8Ebd4QKT9wWYUz4_oU",
             markers: [
                 // Along list of clusters
                 {
                     //Paris
                     position: {
-                        lng: 2.20,
+                        lng: 2.333333,
                         lat: 48.866667,
-                        name : "Paris",
-                        icon:'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png'
-
 
                     },
+                    name : "Paris",
+                    icon:'none'
 
 
                 },

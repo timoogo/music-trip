@@ -8,35 +8,47 @@
 </template>
 
 <script>
+
 export default {
     name: "Sections",
+    components: {},
     methods:{
         clicked(){
             this.notActive = !this.notActive
+            console.log(this.sections)
         },
         increment(){
             this.$emit("incrementCurrentStep")
         },
+        decrease(){
+            this.$emit("decrementCurrentStep")
+        }
     },
     data(){
         return {
+            currentStep: 1,
             notActive:true,
             component:"Single",
             sections: {
                 "Heart":{
                     name:"Coup de coeur",
+                    content:"test cdc"
                 },
                 "City_info":{
                     name:"Informations",
+                    content:"test infos "
                 },
                 'Locations':{
-                    name: 'Lieux préférés des chroniqueurs'
+                    name: 'Lieux préférés des chroniqueurs',
+                    content:"test lieux"
                 },
                 'Groups':{
                     name:'Groupes',
+                    content:"test groupes"
                 },
                 'Custom':{
-                    name:'Champ personalisé'
+                    name:'Champ personalisé',
+                    content:"test custom"
                 }
 
             }

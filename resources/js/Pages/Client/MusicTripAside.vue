@@ -1,8 +1,9 @@
 <template>
    <aside>
+       <Decrement v-if="currentStep > 0" @click="decrementCurrentStep()"/>
        <CitiesStep @click="incrementCurrentStep()" v-if="currentStep == 0"/>
        <Sections   @click="incrementCurrentStep()" v-if="currentStep == 1"/>
-       <Single v-if="currentStep ==2" title="yo" content="{{c}}"/>
+       <Single v-if="currentStep ==2" :title="content" :content="c.toString()"/>
    </aside>
 </template>
 
@@ -10,15 +11,16 @@
 import CitiesStep from "@/Pages/Client/Steps/CitiesStep";
 import Sections from "@/Pages/Client/Steps/Sections";
 import Single from "@/Pages/Client/Steps/Single";
+import Decrement from "@/Pages/Client/Steps/Decrement";
 export default {
 name: "MusicTripAside",
-    components: {Single, Sections, CitiesStep},
+    components: {Decrement, Single, Sections, CitiesStep},
     data (){
     return{
         currentStep: 0,
         componentsArray: ['cities', 'sections', 'single'],
-        content:"ratata",
-        c: this.content
+        content:Sections.data().sections.Custom.name,
+        c: "ayo"
     }
     },
     props:['active', 'title', 'content'],
@@ -27,6 +29,10 @@ name: "MusicTripAside",
             window.console.log(this.currentStep)
             this.currentStep+=1;
         },
+        decrementCurrentStep(){
+            window.console.log(this.currentStep)
+            this.currentStep-=1;
+        }
     },
 
 

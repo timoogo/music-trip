@@ -1,11 +1,11 @@
 <template>
     <div v-if="!notActive" class="">
         <h1 class="text-white">{{title}}</h1>
-        <div><p class="text-white"></p></div>
+        <div><p class="text-white">{{content}}</p></div>
     </div>
     <div v-else class="hidden">
         <h1 class="text-white">{{title}}</h1>
-        <div><p class="text-white"></p></div>
+        <div><p class="text-white">{{content}}</p></div>
     </div>
 </template>
 <script>
@@ -14,7 +14,8 @@ name: "Single",
     data(){
     return {
         notActive:false,
-        title:"yo"
+        content:"lol"
+
 
     }
     },
