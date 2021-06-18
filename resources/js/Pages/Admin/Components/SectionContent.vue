@@ -35,8 +35,50 @@
                                         <label class="block font-medium text-sm text-gray-700" for="description">
                                             <span>Description</span></label>
                                         <textarea class="h-40 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="description" autocomplete="name"></textarea>
-                                        <div class="mt-2" style="display: none;">
-                                            <p class="text-sm text-red-600"></p>
+                                        <div class="mt-2">
+                                            <label class="inline-flex items-center" for="heart">
+                                                <input v-model="checked.global" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="heart">
+                                                <span class="ml-2">Ajouter média</span>
+                                            </label>
+                                            <div class="flex flex-col mt-6">
+                                                <hr v-if="checked.global" class="my-2">
+                                                <label class="inline-flex items-center" for="heart-section_photos" v-if="checked.global">
+                                                    <input v-model="checked.photos" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="heart-section_photos">
+                                                    <span class="ml-2">Photos ({{ title }})</span>
+                                                </label>
+
+                                                   <input v-if="checked.global && checked.photos"
+                                                       class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                                                       type="text"
+                                                      placeholder="Lien attendu"
+                                                     />
+
+                                                <!--videos-->
+                                                <label class="inline-flex items-center" for="heart-section_videos" v-if="checked.global">
+                                                    <input v-model="checked.videos" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="heart-section_videos">
+                                                    <span class="ml-2">Videos ({{ title }})</span>
+                                                </label>
+
+
+                                                <input v-if="checked.global && checked.videos"
+                                                       class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                                                       type="text"
+                                                       placeholder="Lien attendu"
+                                                      />
+                                                <!--YT-->
+                                                <label class="inline-flex items-center" for="heart-section_yt" v-if="checked.global">
+                                                    <input v-model="checked.yt" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="heart-section_yt">
+                                                    <span class="ml-2">Lien YT ({{ title }})</span>
+                                                </label>
+
+
+
+                                                    <input v-if="checked.global && checked.yt"
+                                                           class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                                                           type="text"
+                                                           placeholder="Lien attendu"
+                                                           />
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
@@ -63,7 +105,17 @@ export default {
     name: "SectionContent",
     components: {Input},
     data (){
-        deleteClicked: false
+        return{
+            deleteClicked: false,
+            checked:{
+                global:false,
+                photo: false,
+                videos: false,
+                value:"",
+                yt: false
+            }
+        }
+
     },
     props:['title', 'content', 'isOpen'],
     methods:{

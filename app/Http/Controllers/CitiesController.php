@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -14,7 +13,9 @@ class CitiesController extends Controller
      */
     public function index ()
     {
-        return Inertia::render('Admin/Cities');
+        $cities = Cities::all();
+     //   return Inertia::render('Admin/Cities');
+        return $cities->toJSON(JSON_PRETTY_PRINT);
     }
     public function create(){
         return Inertia::render('Admin/CRUD/Cities/Create');
@@ -36,9 +37,11 @@ class CitiesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($city)
     {
-        //
+        return inertia('City', [
+            'city' => $city,
+        ]);
     }
 
     /**

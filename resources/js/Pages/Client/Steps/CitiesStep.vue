@@ -1,6 +1,6 @@
 <template>
-    <ul v-if="!active">
-        <li class="cursor-pointer"  @click="showCity"  v-for="city in cities">{{ city.name }}</li>
+    <ul v-if="notActive">
+        <li class="cursor-pointer"  @click="showCity,clicked, increment"  v-for="city in cities">{{ city.name }}</li>
     </ul>
 </template>
 
@@ -10,11 +10,11 @@ export default {
 
     data() {
         return {
-            cities: [],
+           // cities: [],
             whatIsSelected:[],
-            active:false,
+            notActive:true,
 
-           /* cities: {
+            cities: {
                 0: {
                     id:0,
                     name: "Paris",
@@ -95,35 +95,32 @@ export default {
                 },
 
             },
-*/
+
         }
     },
    methods:{
         showCity: function(event) {
-
            let value = event.currentTarget.id;
-
-
           console.log(value)
-
         this.clicked()
 
         },
        clicked() {
-        this.active = !this.active
+        this.notActive = !this.notActive
        },
-
-
+       increment() {
+           this.$emit("incrementCurrentStep")
+       }
 
 
    },
-    props:['action'],
-    mounted() {
+    props:['active'],
+/*    mounted() {
         fetch('http://localhost:3000/cities')
             .then((res)=>res.json())
             .then(data =>this.cities = data)
             .catch(err =>console.log(err.message()))
-    }
+    }*/
 
 }
 

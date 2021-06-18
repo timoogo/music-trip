@@ -10,12 +10,11 @@
             <div class="px-4 py-5 bg-white sm:p-6 shadow sm:rounded-tl-md sm:rounded-tr-md flex flex-row">
                 <!--LISTING-->
                 <div class="flex flex-col h-48 ml-4 justify-between max-w-max ">
-                    <div class="toto">
+
                         <label class="inline-flex items-center" for="heart">
                             <input v-model="checked.heart.global" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="heart">
                             <span class="ml-2">Coup de coeur</span>
                         </label>
-                    </div>
                     <label class="inline-flex items-center" for="city">
                         <input v-model="checked.city.global" type="checkbox" class="form-checkbox text-indigo-600 rounded" id="city">
                         <span class="ml-2">Ville</span>

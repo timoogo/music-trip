@@ -28,13 +28,15 @@
                                         <div class="col-span-6 sm:col-span-4">
                                             <label class="block font-medium text-sm text-gray-700" for="name"><span>Ville</span></label>
                                             <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="name" type="text" autocomplete="name">
-                                            <div class="mt-2" style="display: none;">
-                                                <p class="text-sm text-red-600"></p>
-                                            </div>
                                         </div>
                                         <div class="col-span-6 sm:col-span-4 flex justify-center">
-                                            <div class="flex justify-center border-red-500 border-2 w-9/12 h-72">
+                                            <div class="flex justify-center mx-auto w-full h-full">
+                                                <!--
                                                 <img :src="map" alt="" srcset="">
+                                            -->
+                                              <div class="w-full h-full">
+                                                  <Map style="max-height: fit-content"/>
+                                              </div>
                                             </div>
                                         </div>
                                     </div>
@@ -61,7 +63,8 @@
 
 
                 <!--  -->
-                <Mediatheque/>
+              <!--  <Mediatheque/> -->
+
                 <PublishConfirmation/>
             </div>
         </div>
@@ -73,10 +76,12 @@ import Mediatheque from "@/Pages/Admin/Components/Mediatheque";
 import DraggableSection from "@/Pages/Sandbox/DraggableSection";
 import SectionHolder from "@/Pages/Admin/Components/SectionHolder";
 import PublishConfirmation from "@/Pages/Admin/Components/PublishConfirmation";
+import Map from "@/Pages/Client/Map";
 
 export default {
     name: "Create",
     components:{
+        Map,
         PublishConfirmation,
         SectionHolder,
         AppLayout,

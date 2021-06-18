@@ -63,7 +63,7 @@
                     </div>
                     </div>
                 </div>
-                {{cities}}
+
             </div>
         </div>
     </app-layout>

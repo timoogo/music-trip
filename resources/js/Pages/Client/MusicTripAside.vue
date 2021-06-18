@@ -1,20 +1,35 @@
 <template>
    <aside>
-       <CitiesStep v-bind:is-selected="true"></CitiesStep>
+       <CitiesStep @click="incrementCurrentStep()" v-if="currentStep == 0"/>
+       <Sections   @click="incrementCurrentStep()" v-if="currentStep == 1"/>
+       <Single v-if="currentStep ==2" title="yo" content="{{c}}"/>
    </aside>
 </template>
 
 <script>
 import CitiesStep from "@/Pages/Client/Steps/CitiesStep";
+import Sections from "@/Pages/Client/Steps/Sections";
+import Single from "@/Pages/Client/Steps/Single";
 export default {
 name: "MusicTripAside",
-    components: {CitiesStep},
+    components: {Single, Sections, CitiesStep},
     data (){
     return{
-        currentComponent: null,
+        currentStep: 0,
         componentsArray: ['cities', 'sections', 'single'],
+        content:"ratata",
+        c: this.content
     }
-    }
+    },
+    props:['active', 'title', 'content'],
+    methods:{
+        incrementCurrentStep (){
+            window.console.log(this.currentStep)
+            this.currentStep+=1;
+        },
+    },
+
+
 }
 </script>
 
