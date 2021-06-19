@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\CitiesController;
+use App\Http\Controllers\bababa;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -34,8 +34,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/users', [UsersController::class, "index"])->name("users.index");
     Route::get('/users/create', [UsersController::class, "create"])->name("users.create");
 
-    Route::get('/cities', [CitiesController::class, "index"])->name("cities.index");
-    Route::get('/cities/create', [CitiesController::class, "create"])->name("cities.create");
+    Route::get('/cities', [bababa::class, "index"])->name("cities.index");
+    Route::get('/cities/create', [bababa::class, "create"])->name("cities.create");
+
+
    // Route::get('/test', [\App\Http\Controllers\Sandbox::class, "index"])->name("sandbox.index");
 
 });

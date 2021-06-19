@@ -10,6 +10,7 @@
 </template>
 
 <script>
+
 import Header from "@/Pages/Client/Header";
 import Map from "@/Pages/Client/Map";
 import MusicTripAside from "@/Pages/Client/MusicTripAside";

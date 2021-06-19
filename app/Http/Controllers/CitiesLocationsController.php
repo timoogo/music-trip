@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\DB;
 
-class CitiesController extends Controller
+
+class CitiesLocationsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +15,8 @@ class CitiesController extends Controller
      */
     public function index ()
     {
-        $cities = Cities::all();
-     //   return Inertia::render('Admin/Cities');
-        return $cities->toJSON(JSON_PRETTY_PRINT);
+
+
     }
     public function create(){
         return Inertia::render('Admin/CRUD/Cities/Create');
@@ -37,12 +38,16 @@ class CitiesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($city)
+
+    public function show($cityId)
     {
-        return inertia('City', [
-            'city' => $city,
+        $city_locations = DB::table('locations')->where('city_id', '=', $cityId)
+            ->get();
+        return Inertia::render('Admin/CRUD/Cities/Show', [
+            'city_heart_stroke' => [$city_locations]
         ]);
     }
+
 
     /**
      * Show the form for editing the specified resource.

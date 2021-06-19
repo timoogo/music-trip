@@ -1,6 +1,7 @@
 <template>
     <div class="map">
-    <GoogleMap
+
+  <GoogleMap
         api-key="AIzaSyAEU_oku2XWD_aTo8Ebd4QKT9wWYUz4_oU"
         style="margin-top: 4vh; width: 75%; height: 85vh;"
         :center="center"
@@ -17,13 +18,15 @@
             </GMapInfoWindow>
         </Marker>
     </GoogleMap>
+
+
+
     </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-import { GoogleMap, Marker } from 'vue3-google-map'
-let mapStyle = [
+ import { GoogleMap, Marker } from 'vue3-google-map'
+ let mapStyle = [
     {
         "featureType": "all",
         "elementType": "labels.text.fill",
@@ -327,8 +330,16 @@ let mapStyle = [
 ];
 
 
-export default defineComponent({
-    components: { GoogleMap, Marker,InfoWindow  },
+export default{
+    name:"Map",
+  /*  components: { GoogleMap, Marker
+            //VueGoogleMaps
+        },
+        */
+    components:{
+        GoogleMap, Marker
+    },
+
     methods:{
       cityData(city){
           let value = city.currentTarget;
@@ -472,7 +483,7 @@ export default defineComponent({
                 },
 
             },
-            mapStyle: {styles: mapStyle}
+          //  mapStyle: {styles: mapStyle}
 
         }
     },
@@ -482,7 +493,7 @@ export default defineComponent({
 
         return { center }
     },
-})
+}
 </script>
 <style lang="scss" scoped>
 GoogleMap{
