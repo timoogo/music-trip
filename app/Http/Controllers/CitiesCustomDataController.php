@@ -43,9 +43,7 @@ class CitiesCustomDataController extends Controller
     {
         $city_custom_data = DB::table('custom_datas')->where('city_id', '=', $cityId)
             ->get();
-        return Inertia::render('Admin/CRUD/Cities/Show', [
-            'city_custom_data' => [$city_custom_data]
-        ]);
+        return $city_custom_data->toJSON(JSON_PRETTY_PRINT);
     }
 
     /**

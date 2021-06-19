@@ -1,9 +1,9 @@
 <template>
     <ul v-if="!notActive" class="hidden invisible">
-        <li class="cursor-pointer"  @click="clicked, increment"  v-for="section in sections">{{ section.name }}</li>
+        <li class="cursor-pointer"  @click=" increment, display($parent.selectedCity, section.id)"  v-for="section in sections">{{ section.name }}</li>
     </ul>
     <ul v-else class="flex flex-col">
-        <li class="cursor-pointer"  @click="clicked, increment"  v-for="section in sections">{{ section.name }}</li>
+        <li class="cursor-pointer"  @click=" increment, display($parent.selectedCity, section.id)"  v-for="section in sections">{{ section.name }}</li>
     </ul>
 </template>
 
@@ -22,38 +22,41 @@ export default {
         },
         decrease(){
             this.$emit("decrementCurrentStep")
+        },
+        display(cityId, sectionName){
+            this.$emit('display', cityId, sectionName)
         }
     },
     data(){
         return {
             currentStep: 1,
-            notActive:true,
-            component:"Single",
-            sections: {
-                "Heart":{
-                    name:"Coup de coeur",
-                    content:"test cdc"
+            notActive: true,
+            sections : {
+
+
+                0: {
+                    id: "info",
+                    name: 'informations'
                 },
-                "City_info":{
-                    name:"Informations",
-                    content:"test infos "
+                1: {
+                    id: "locations",
+                    name: "Locations"
                 },
-                'Locations':{
-                    name: 'Lieux préférés des chroniqueurs',
-                    content:"test lieux"
+                2:
+                    {
+                        id:'heartstroke',
+                    name: "Coup de coeur"
                 },
-                'Groups':{
-                    name:'Groupes',
-                    content:"test groupes"
+                3: {id:"musicgroup",
+                    name: "Music group"
                 },
-                'Custom':{
-                    name:'Champ personalisé',
-                    content:"test custom"
+                4: {id:"customdata",
+                    name: "Info Suplementaires"
                 }
 
             }
         }
-    }
+        }
 }
 </script>
 

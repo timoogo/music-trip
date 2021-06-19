@@ -24,9 +24,9 @@ class CitiesInfosController extends Controller
         $cities = DB::table('cities')
 
             ->get();
-        return Inertia::render('Admin/Cities', [
-            'cities' => [$cities]
-        ]);
+        return  $cities->toJSON(JSON_PRETTY_PRINT);//Inertia::render('Admin/Cities', [
+      //      'cities' => [$cities]
+       // ]);
 
     }
     public function create(){
@@ -53,9 +53,9 @@ class CitiesInfosController extends Controller
     {
         $city_info = DB::table('city_infos')->where('city_id', '=', $cityId)
             ->get();
-        return Inertia::render('Admin/CRUD/Cities/Show', [
-            'city_info' => [$city_info]
-        ]);
+        return $city_info ->toJSON(JSON_PRETTY_PRINT);
+
+
     }
 
     /**

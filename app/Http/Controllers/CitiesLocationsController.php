@@ -43,10 +43,9 @@ class CitiesLocationsController extends Controller
     {
         $city_locations = DB::table('locations')->where('city_id', '=', $cityId)
             ->get();
-        return Inertia::render('Admin/CRUD/Cities/Show', [
-            'city_heart_stroke' => [$city_locations]
-        ]);
+        return $city_locations->toJSON(JSON_PRETTY_PRINT);
     }
+
 
 
     /**

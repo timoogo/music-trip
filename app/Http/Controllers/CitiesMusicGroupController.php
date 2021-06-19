@@ -45,10 +45,9 @@ class CitiesMusicGroupController extends Controller
     {
         $city_music_groups = DB::table('music_groups')->where('city_id', '=', $cityId)
             ->get();
-        return Inertia::render('Admin/CRUD/Cities/Show', [
-            'city_music_groups' => [$city_music_groups]
-        ]);
+        return $city_music_groups->toJSON(JSON_PRETTY_PRINT);
     }
+
 
 
     /**

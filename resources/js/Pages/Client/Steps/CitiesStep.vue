@@ -1,6 +1,7 @@
 <template>
     <ul v-if="notActive">
-        <li class="cursor-pointer"  @click="showCity,clicked, increment"  v-for="city in cities">{{ city.name }}</li>
+        <li class="cursor-pointer"  @click="increment(), registerCity(city.id)"  v-for="city in citiesNames">{{ city.name }}</li>
+
     </ul>
 </template>
 
@@ -10,7 +11,7 @@ export default {
 
     data() {
         return {
-           // cities: [],
+            citiesNames: null,
             whatIsSelected:[],
             notActive:true,
 
@@ -101,7 +102,6 @@ export default {
    methods:{
         showCity: function(event) {
            let value = event.currentTarget.id;
-          console.log(value)
         this.clicked()
 
         },
@@ -109,11 +109,19 @@ export default {
         this.notActive = !this.notActive
        },
        increment() {
-           this.$emit("incrementCurrentStep")
+           this.$emit("increment")
+       },
+       registerCity(cityid){
+            this.$emit('registerCity', cityid)
        }
 
 
    },
+    mounted() {
+        axios
+            .get('http://127.0.0.1:8000/api/info')
+            .then(response => (this.citiesNames = response.data))
+    },
     props:['active'],
 /*    mounted() {
         fetch('http://localhost:3000/cities')

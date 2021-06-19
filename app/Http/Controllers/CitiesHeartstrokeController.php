@@ -42,9 +42,7 @@ class CitiesHeartstrokeController extends Controller
     {
         $city_heart_stroke = DB::table('chron_favorites')->where('city_id', '=', $cityId)
             ->get();
-        return Inertia::render('Admin/CRUD/Cities/Show', [
-            'city_heart_stroke' => [$city_heart_stroke]
-        ]);
+        return $city_heart_stroke->toJSON(JSON_PRETTY_PRINT);
     }
 
 

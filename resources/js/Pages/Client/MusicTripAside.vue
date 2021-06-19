@@ -1,9 +1,9 @@
 <template>
    <aside>
-       <Decrement v-if="currentStep > 0" @click="decrementCurrentStep()"/>
-       <CitiesStep @click="incrementCurrentStep()" v-if="currentStep == 0"/>
-       <Sections   @click="incrementCurrentStep()" v-if="currentStep == 1"/>
-       <Single v-if="currentStep ==2" :title="content" :content="c.toString()"/>
+       <Decrement v-if="currentStep > 0" @click="decrementCurrentStep"/>
+       <CitiesStep @increment="incrementCurrentStep" @registerCity="registerCurrentCity" v-if="currentStep == 0"/>
+       <Sections   @increment="incrementCurrentStep" @display="getContent" v-if="currentStep == 1"/>
+       <Single v-if="currentStep ==2" :title="content" :content="contentData"/>
    </aside>
 </template>
 
@@ -15,22 +15,33 @@ import Decrement from "@/Pages/Client/Steps/Decrement";
 export default {
 name: "MusicTripAside",
     components: {Decrement, Single, Sections, CitiesStep},
-    data (){
+    data(){
     return{
+        selectedCity:null,
+        selectedSection:null,
         currentStep: 0,
-        componentsArray: ['cities', 'sections', 'single'],
-        content:Sections.data().sections.Custom.name,
-        c: "ayo"
+        contentData: null
     }
     },
     props:['active', 'title', 'content'],
     methods:{
+        registerCurrentCity(city){
+            this.selectedCity = city
+            console.log(city)
+
+
+        },
+    getContent(cityId,sectionName){
+
+            return axios
+                .get('http://127.0.0.1:8000/api/'+ sectionName + '/' + cityId)
+                .then(response => (this.contentData = response.data))
+
+    },
         incrementCurrentStep (){
-            window.console.log(this.currentStep)
             this.currentStep+=1;
         },
         decrementCurrentStep(){
-            window.console.log(this.currentStep)
             this.currentStep-=1;
         }
     },
