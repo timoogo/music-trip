@@ -30,6 +30,7 @@ name: "MusicTripAside",
     methods:{
         registerCurrentCity(city){
             this.selectedCity = city
+            this.selectedSection = Sections.sections
             console.log(city)
 
         },

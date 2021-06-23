@@ -32,8 +32,8 @@
                                                 <!--
                                                 <img :src="map" alt="" srcset="">
                                             -->
-                                              <div class="w-full h-full">
-                                                  <Map style="max-height: fit-content"/>
+                                              <div class="w-5/12 h-5/12">
+                                               <!--   <Map/> -->
                                               </div>
                                             </div>
                                         </div>
@@ -102,5 +102,11 @@ export default {
 
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
+
+.map {
+    width:100%;
+    height:  85vh;
+    background: #fff;
+}
 </style>

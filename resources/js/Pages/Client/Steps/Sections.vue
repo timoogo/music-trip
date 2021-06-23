@@ -1,6 +1,6 @@
 <template>
 
-        <ul>
+        <ul class="h-5/6">
             <li class=" text-white cursor-pointer"  @click="clicked(), increment(), display($parent.selectedCity, section.id)"  v-for="section in sections">{{ section.name }}</li>
         </ul>
 
@@ -65,7 +65,6 @@ ul{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
     padding: 3rem;
     color:#fff ;
     font-size: 20px;
