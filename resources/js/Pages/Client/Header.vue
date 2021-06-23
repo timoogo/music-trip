@@ -1,13 +1,13 @@
 <template>
     <header>
         <nav class="flex row align-middle">
-            <inertia-link>
+            <inertia-link class="transition duration-1000 ease-in-out hover:underline hover:text-red-600 text-green-400">
                 <img :src="image_src" v-bind:alt="alt" :title="alt"/>
             </inertia-link>
             <ul class="flex items-center justify-evenly w-11/12">
-                <li><inertia-link>Lien 1</inertia-link></li>
-                <li><inertia-link>Lien 2</inertia-link></li>
-                <li><inertia-link>Lien 3</inertia-link></li>
+                <li><inertia-link class="transition duration-1000 ease-in-out hover:underline hover:text-red-600 text-green-400">Lien 1</inertia-link></li>
+                <li><inertia-link class="transition duration-1000 ease-in-out hover:underline hover:text-red-600 text-green-400">Lien 2</inertia-link></li>
+                <li><inertia-link class="transition duration-1000 ease-in-out hover:underline hover:text-red-600 text-green-400">Lien 3</inertia-link></li>
                <div class="music-trip-button-container">
                    <li class="music-trip-button uppercase"><inertia-link href="/login">se connecter</inertia-link></li>
                </div>

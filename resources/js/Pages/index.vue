@@ -1,12 +1,12 @@
 <template>
+<div class="overflow-y-hidden">
     <Header/>
-        <main>
-    <Map/>
-        </main>
+    <main>
+        <Map/>
+    </main>
     <MusicTripAside/>
-    <footer>
-        intégré par Timogo, droit par Musictrip
-    </footer>
+    <Footer/>
+</div>
 </template>
 
 <script>
@@ -14,10 +14,12 @@
 import Header from "@/Pages/Client/Header";
 import Map from "@/Pages/Client/Map";
 import MusicTripAside from "@/Pages/Client/MusicTripAside";
+import Footer from "@/Pages/Client/Footer";
 export default {
 
     name: "index",
     components:{
+        Footer,
         MusicTripAside,
         Header,
         Map,
@@ -26,7 +28,7 @@ export default {
 </script>
 
 <style scoped>
-    template{
-        border: 1px solid red;
-    }
+  html{
+
+  }
 </style>

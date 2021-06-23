@@ -1,9 +1,12 @@
 <template>
-   <aside>
-       <Decrement v-if="currentStep > 0" @click="decrementCurrentStep"/>
-       <CitiesStep @increment="incrementCurrentStep" @registerCity="registerCurrentCity" v-if="currentStep == 0"/>
-       <Sections   @increment="incrementCurrentStep" @display="getContent" v-if="currentStep == 1"/>
-       <Single v-if="currentStep ==2" :title="content" :content="contentData"/>
+   <aside class="absolute right-0 top-36 p-3 w-1/2 h-5/6 mt-1 bg-black">
+    <div class="flex flex-row justify-between">
+        <Decrement v-if="currentStep > 0" @click="decrementCurrentStep"/>
+        <span class="text-white" v-if="currentStep > 0">{{  }}</span>
+    </div>
+       <CitiesStep v-if="currentStep == 0" @increment="incrementCurrentStep" @registerCity="registerCurrentCity" />
+       <Sections  v-if="currentStep == 1" @increment="incrementCurrentStep" @display="getContent" />
+       <Single v-if="currentStep > 1"/>
    </aside>
 </template>
 
@@ -23,26 +26,31 @@ name: "MusicTripAside",
         contentData: null
     }
     },
-    props:['active', 'title', 'content'],
+    props:['title', 'content'],
     methods:{
         registerCurrentCity(city){
             this.selectedCity = city
             console.log(city)
 
+        },
+
+        getContent(cityId,sectionName){
+                return axios
+                    .get('http://127.0.0.1:8000/api/'+ sectionName + '/' + cityId)
+                    .then(response => (this.contentData = response.data))
+
 
         },
-    getContent(cityId,sectionName){
-
-            return axios
-                .get('http://127.0.0.1:8000/api/'+ sectionName + '/' + cityId)
-                .then(response => (this.contentData = response.data))
-
-    },
+        triggerSingleContent(){
+            this.currentStep+=1
+        },
         incrementCurrentStep (){
-            this.currentStep+=1;
+            console.log('incremented')
+            this.currentStep++;
         },
         decrementCurrentStep(){
             this.currentStep-=1;
+            this.$children.notActive = true
         }
     },
 
@@ -52,14 +60,16 @@ name: "MusicTripAside",
 
 <style scoped lang="scss">
 aside {
+/*
     position: absolute;
     right: 0;
     top: 15.5vh;
     padding: 3rem;
     width: 50%;
-    height: 83vh;
+    height: 88vh;
+    max-height: 100%;
     margin-top: 2vh;
-    background-color: #000;
+    background-color: #000;*/
 }
 
 </style>

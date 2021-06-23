@@ -1,12 +1,13 @@
 <template>
-    <div class="map">
+    <div class="w-full h-5/6 mt-1 absolute left-0 top-28">
 
   <GoogleMap
         api-key="AIzaSyAEU_oku2XWD_aTo8Ebd4QKT9wWYUz4_oU"
         style="margin-top: 4vh; width: 75%; height: 85vh;"
         :center="center"
-        :zoom="6"
+        :zoom="5.85"
         :options="mapStyle"
+        :draggable="false"
 >
         <Marker :id="index" :key="index" v-for="(m, index) in markers" :options="{position: m.position}" :clickable="true" :draggable="true"
                 :icon="m.icon"    @click="center = m.position" >
@@ -500,8 +501,6 @@ GoogleMap{
 
 }
     .map {
-        width:100%;
-        height:  85vh;
-        background: #fff;
+
     }
 </style>

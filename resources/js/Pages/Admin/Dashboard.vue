@@ -54,13 +54,14 @@
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-evenly mx-auto">
                                         <div class="w-4 mx-2 transform hover:text-purple-500">
-                                            <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">AJOUTER</a>
+                                            <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">VOIR</a>
                                         </div>
-                                        <div class="w-4 mx-2 transform hover:text-purple-500">
-                                            <a href="#" class="bg-black hover:bg-grey-700 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>
-                                        </div>
+
                                         <div class="w-4 mx-2 transform hover:text-purple-500">
                                             <a href="#" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">MODIFIER</a>
+                                        </div>
+                                       <div class="w-4 mx-2 transform hover:text-purple-500">
+                                            <a href="#" class="bg-black hover:bg-grey-700 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>
                                         </div>
                                     </div>
                                 </td>
@@ -93,13 +94,14 @@
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-evenly mx-auto">
                                         <div class="w-4 mx-2 transform hover:text-purple-500">
-                                            <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">AJOUTER</a>
+                                            <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">VOIR</a>
                                         </div>
-                                        <div class="w-4 mx-2 transform hover:text-purple-500">
-                                            <a href="#" class="bg-black hover:bg-grey-700 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>
-                                        </div>
+
                                         <div class="w-4 mx-2 transform hover:text-purple-500">
                                             <a href="#" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">MODIFIER</a>
+                                        </div>
+                                       <div class="w-4 mx-2 transform hover:text-purple-500">
+                                            <a href="#" class="bg-black hover:bg-grey-700 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>
                                         </div>
                                     </div>
                                 </td>
@@ -132,13 +134,14 @@
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-evenly mx-auto">
                                         <div class="w-4 mx-2 transform hover:text-purple-500">
-                                            <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">AJOUTER</a>
+                                            <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">VOIR</a>
                                         </div>
-                                        <div class="w-4 mx-2 transform hover:text-purple-500">
-                                            <a href="#" class="bg-black hover:bg-grey-700 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>
-                                        </div>
+
                                         <div class="w-4 mx-2 transform hover:text-purple-500">
                                             <a href="#" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">MODIFIER</a>
+                                        </div>
+                                       <div class="w-4 mx-2 transform hover:text-purple-500">
+                                            <a href="#" class="bg-black hover:bg-grey-700 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>
                                         </div>
                                     </div>
                                 </td>
@@ -171,13 +174,14 @@
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-evenly mx-auto">
                                         <div class="w-4 mx-2 transform hover:text-purple-500">
-                                            <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">AJOUTER</a>
+                                            <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">VOIR</a>
                                         </div>
-                                        <div class="w-4 mx-2 transform hover:text-purple-500">
-                                            <a href="#" class="bg-black hover:bg-grey-700 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>
-                                        </div>
+
                                         <div class="w-4 mx-2 transform hover:text-purple-500">
                                             <a href="#" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">MODIFIER</a>
+                                        </div>
+                                       <div class="w-4 mx-2 transform hover:text-purple-500">
+                                            <a href="#" class="bg-black hover:bg-grey-700 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>
                                         </div>
                                     </div>
                                 </td>

@@ -122,13 +122,6 @@ export default {
             .get('http://127.0.0.1:8000/api/info')
             .then(response => (this.citiesNames = response.data))
     },
-    props:['active'],
-/*    mounted() {
-        fetch('http://localhost:3000/cities')
-            .then((res)=>res.json())
-            .then(data =>this.cities = data)
-            .catch(err =>console.log(err.message()))
-    }*/
 
 }
 

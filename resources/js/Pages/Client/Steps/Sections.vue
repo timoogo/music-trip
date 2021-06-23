@@ -1,10 +1,9 @@
 <template>
-    <ul v-if="!notActive" class="hidden invisible">
-        <li class="cursor-pointer"  @click=" increment, display($parent.selectedCity, section.id)"  v-for="section in sections">{{ section.name }}</li>
-    </ul>
-    <ul v-else class="flex flex-col">
-        <li class="cursor-pointer"  @click=" increment, display($parent.selectedCity, section.id)"  v-for="section in sections">{{ section.name }}</li>
-    </ul>
+
+        <ul>
+            <li class=" text-white cursor-pointer"  @click="clicked(), increment(), display($parent.selectedCity, section.id)"  v-for="section in sections">{{ section.name }}</li>
+        </ul>
+
 </template>
 
 <script>
@@ -14,33 +13,33 @@ export default {
     components: {},
     methods:{
         clicked(){
-            this.notActive = !this.notActive
             console.log(this.sections)
         },
         increment(){
-            this.$emit("incrementCurrentStep")
+            console.log('incremented ' + this.currentStep )
+            this.$emit("increment")
+            console.log('incremented ' + this.currentStep )
         },
         decrease(){
             this.$emit("decrementCurrentStep")
         },
         display(cityId, sectionName){
+            console.log( sectionName + " clicked")
             this.$emit('display', cityId, sectionName)
         }
     },
     data(){
         return {
             currentStep: 1,
-            notActive: true,
+            notActive: false,
             sections : {
-
-
                 0: {
                     id: "info",
                     name: 'informations'
                 },
                 1: {
                     id: "locations",
-                    name: "Locations"
+                    name: "Lieux"
                 },
                 2:
                     {

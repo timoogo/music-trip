@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\City;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 use Illuminate\Support\Facades\DB;
-use \App\Models\CityInfo;
+use Inertia\Inertia;
 
-
-class CitiesInfosController extends Controller
+class CitiesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,8 +26,8 @@ class CitiesInfosController extends Controller
 
             ->get();
         return  $cities->toJSON(JSON_PRETTY_PRINT);//Inertia::render('Admin/Cities', [
-      //      'cities' => [$cities]
-       // ]);
+        //      'cities' => [$cities]
+        // ]);
 
     }
     public function create(){
@@ -41,7 +41,7 @@ class CitiesInfosController extends Controller
      */
     public function store(Request $request)
     {
-        CityInfo::create([
+        City::create([
 
             'city_id' => $request->city_id,
             'title' => $request->title,
@@ -66,9 +66,9 @@ class CitiesInfosController extends Controller
      */
     public function show($cityId)
     {
-        $city_info = DB::table('city_infos')->where('city_id', '=', $cityId)
+        $city = DB::table('city')->where('city_id', '=', $cityId)
             ->get();
-        return $city_info ->toJSON(JSON_PRETTY_PRINT);
+        return $city ->toJSON(JSON_PRETTY_PRINT);
 
 
     }

@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CitiesController;
 use App\Http\Controllers\CitiesInfosController;
 use App\Http\Controllers\CitiesLocationsController;
 use App\Http\Controllers\CitiesHeartstrokeController;
@@ -25,6 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
+Route::apiResource('cities', CitiesController::class);
 Route::apiResource('info', CitiesInfosController::class);
 Route::apiResource('locations', CitiesLocationsController::class);
 Route::apiResource('heartstroke', CitiesHeartstrokeController::class);

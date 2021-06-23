@@ -17,7 +17,7 @@ class CreateChronFavoriteTable extends Migration
             $table->id();
             $table->integer('city_id');
             $table->string('title')->nullable();
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
 
             $table->string('img_src')->nullable();
 
