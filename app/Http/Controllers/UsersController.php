@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\City;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use App\Models\User;
 use function Symfony\Component\String\u;
+use Validator;
 
 class UsersController extends Controller
 {
@@ -30,7 +32,7 @@ class UsersController extends Controller
             'cities' => [$cities]
         ]);
 
-       // return Inertia::render('Admin/Users', [$users]);
+        return Inertia::render('Admin/Users', [$users]);
     }
 
     /**
@@ -41,6 +43,7 @@ class UsersController extends Controller
     public function create()
     {
         return Inertia::render('Admin/CRUD/Users/Create');
+
     }
 
     /**
@@ -48,10 +51,25 @@ class UsersController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
-     */
+/*
+     * */
     public function store(Request $request)
     {
-        //
+        $postData = $request->validate([
+                'name' => ['required'],
+                'email' => ['required', 'email'],
+                'password' => ['required'],
+                'which_city_id' => ['required'],
+            ]);
+
+
+          User::create([
+              'name' => $postData['name'],
+              'email' => $postData['email'],
+              'password' => $postData['password'],
+              'which_city_id' => $postData['which_city_id'],
+          ]);
+        return redirect()->route('users.index');
     }
 
     /**
@@ -60,6 +78,18 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+  /*  public function store()
+    {
+        User::create(
+            Request::validate([
+                'first_name' => ['required', 'max:50'],
+                'last_name' => ['required', 'max:50'],
+                'email' => ['required', 'max:50', 'email'],
+            ])
+        );
+
+        return Redirect::route('users.create');
+    }*/
     public function show(User $user)
     {
         return inertia('User', [

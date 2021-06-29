@@ -27,18 +27,22 @@ Route::get('/', function () {
     ]);
 });
 
+
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return Inertia::render('Admin/Dashboard');
     })->name('dashboard');
 
     Route::get('/users', [UsersController::class, "index"])->name("users.index");
-    Route::get('/users/create', [UsersController::class, "create"])->name("users.create");
+    Route::get('/users/create', [UsersController::class, "store"])->name("users.create");
 
     Route::get('/cities', [bababa::class, "index"])->name("cities.index");
     Route::get('/cities/create', [bababa::class, "create"])->name("cities.create");
+    Route::get('/users/create', [UsersController::class, "create"])->name('users.create');
+    Route::post('/users/save', [UsersController::class, "store"])->name('users.store');
 
-   // Route::post('/info', "CitiesInfosController@store");
+
+    // Route::post('/info', "CitiesInfosController@store");
    // Route::get('/test', [\App\Http\Controllers\Sandbox::class, "index"])->name("sandbox.index");
 
 });

@@ -17,54 +17,46 @@
                             <div class="px-4 sm:px-0"></div>
                         </div>
                         <div class="mt-5 md:mt-0 md:col-span-2">
-                            <form>
+                            <form @submit.prevent="handleSubmit">
                                 <div class="px-4 py-5 bg-white sm:p-6 shadow sm:rounded-tl-md sm:rounded-tr-md">
                                     <div class="grid grid-cols-6 gap-6">
                                         <!-- Profile Photo -->
                                         <!--v-if-->
                                         <!-- Name -->
                                         <div class="col-span-6 sm:col-span-4">
-                                            <label class="block font-medium text-sm text-gray-700" for="name"><span>Name</span></label><input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="name" type="text" autocomplete="name">
+                                            <label class="block font-medium text-sm text-gray-700" for="name"><span>Name</span></label>
+                                            <input v-model="form.name" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="name" type="text" autocomplete="name" tabindex="1">
                                             <div class="mt-2" style="display: none;">
                                                 <p class="text-sm text-red-600"></p>
                                             </div>
                                         </div>
                                         <!-- Email -->
                                         <div class="col-span-6 sm:col-span-4">
-                                            <label class="block font-medium text-sm text-gray-700" for="email"><span>Email</span></label><input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="email" type="email">
+                                            <label class="block font-medium text-sm text-gray-700" for="email"><span>Email</span></label>
+                                            <input v-model="form.email" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="email" type="email" tabindex="2">
                                             <div class="mt-2" style="display: none;">
                                                 <p class="text-sm text-red-600"></p>
                                             </div>
                                         </div>
                                         <div class="col-span-6 sm:col-span-4">
-                                            <label class="block font-medium text-sm text-gray-700" for="pass">
+                                            <label class="block font-medium text-sm text-gray-700" for="password">
                                                 <span>Password</span>
                                             </label>
-                                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="pass" type="password">
+                                            <input v-model="form.password" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="password" type="password" tabindex="3">
                                             <div class="mt-2" style="display: none;">
                                                 <p class="text-sm text-red-600"></p>
                                             </div>
                                         </div>
 
-                                        <div class="col-span-6 sm:col-span-4">
-                                            <label class="block font-medium text-sm text-gray-700" for="confirm_pass">
-                                                <span>Password</span>
-                                                </label>
-                                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="confirm_pass" type="password">
-                                            <div class="mt-2" style="display: none;">
-                                                <p class="text-sm text-red-600"></p>
-                                            </div>
-                                        </div>
 
                                         <div class="col-span-6 sm:col-span-4">
-                                            <label class="block font-medium text-sm text-gray-700" for="other">
+                                            <label class="block font-medium text-sm text-gray-700" for="which_city_id">
                                                 <span>Ville assignée</span>
                                             </label>
-                                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="other" type="text">
+                                            <input v-model="form.which_city_id" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="which_city_id" type="text" tabindex="4">
                                             <div class="mt-2" style="display: none;">
                                                 <p class="text-sm text-red-600"></p>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -92,10 +84,27 @@
 <script>
 import AppLayout from "@/Layouts/AppLayout";
 
+
 export default {
 name: "Create",
     components:{
         AppLayout,
+    },
+    props:['new_user'],
+    data(){
+        return{
+            form:{
+                name:'',
+                email:'',
+                password:'',
+                which_city_id:'',
+            }
+        }
+    },
+    methods:{
+      async  handleSubmit(){
+           let response = await this.$inertia.post('/users/save', this.form)
+        }
     }
 
 }
