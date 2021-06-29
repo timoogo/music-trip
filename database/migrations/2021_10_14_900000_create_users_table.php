@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->foreignId('which_city_id')->nullable();
+            $table->boolean('is_super_chroniqueur')->default(false);
             $table->text('profile_photo_path')->nullable();
 
 

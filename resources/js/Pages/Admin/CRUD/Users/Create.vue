@@ -58,11 +58,18 @@
                                                 <p class="text-sm text-red-600"></p>
                                             </div>
                                         </div>
+
                                     </div>
+                                    <label for="is_super_chroniqueur" class="flex justify-start items-start">
+                                        <div class="bg-white border-2 rounded border-gray-400 w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500">
+                                            <input  v-model="form.is_super_chroniqueur" type="checkbox" class="text-indigo-600 rounded" id="is_super_chroniqueur">
+                                        </div>
+                                        <span class="select-none">Super chroniqueur</span>
+                                    </label>
                                 </div>
                                 <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md">
                                     <div class="mr-3">
-                                        <div class="text-sm text-gray-600" style="display: none;"> Sauvardé. </div>
+                                        <div class="text-sm text-gray-600" style="display: none;"> Sauvgardé. </div>
                                     </div>
                                     <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition"> Sauvarder </button>
                                 </div>
@@ -98,6 +105,7 @@ name: "Create",
                 email:'',
                 password:'',
                 which_city_id:'',
+                is_super_chroniqueur:false,
             }
         }
     },

@@ -28,6 +28,7 @@ class User extends Authenticatable
         'email',
         'password',
         'which_city_id',
+        'is_super_chroniqueur'
     ];
 
     /**

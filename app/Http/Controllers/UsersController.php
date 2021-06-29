@@ -60,6 +60,7 @@ class UsersController extends Controller
                 'email' => ['required', 'email'],
                 'password' => ['required'],
                 'which_city_id' => ['required'],
+                'is_super_chroniqueur' => ['required']
             ]);
 
 
@@ -68,6 +69,7 @@ class UsersController extends Controller
               'email' => $postData['email'],
               'password' => $postData['password'],
               'which_city_id' => $postData['which_city_id'],
+              'is_super_chroniqueur' => $postData['is_super_chroniqueur'],
           ]);
         return redirect()->route('users.index');
     }
