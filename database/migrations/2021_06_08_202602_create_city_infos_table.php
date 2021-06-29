@@ -15,17 +15,21 @@ class CreateCityInfosTable extends Migration
     {
         Schema::create('city_infos', function (Blueprint $table) {
             $table->id();
-            $table->integer('city_id')->unique();
+            $table->unsignedBigInteger('city_id')->nullable();
+
             $table->string('title')->nullable();
             $table->longText('description')->nullable();
             $table->string('img_src')->nullable();
 
+
             $table->string('video_src')->nullable();
 
             $table->string('yt_src')->nullable();
-            $table->boolean('isCompleted')->default(false);
+            $table->boolean('isCompleted')->nullable()->default(false);
 
             $table->timestamps();
+            //CONSTAINTS
+            $table->foreign('city_id')->references('id')->on('cities');
         });
     }
 

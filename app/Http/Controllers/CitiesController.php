@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\City;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\DB;
+use App\Models\City;
 
-class CitiesController extends Controller
+class citiesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,9 +24,9 @@ class CitiesController extends Controller
         $cities = DB::table('cities')
 
             ->get();
-        return  $cities->toJSON(JSON_PRETTY_PRINT);//Inertia::render('Admin/Cities', [
-        //      'cities' => [$cities]
-        // ]);
+        return Inertia::render('Admin/Cities', [
+            'cities' => [$cities]
+        ]);
 
     }
     public function create(){
@@ -41,36 +40,64 @@ class CitiesController extends Controller
      */
     public function store(Request $request)
     {
-        City::create([
 
-            'city_id' => $request->city_id,
-            'title' => $request->title,
-            'description' =>$request->description,
-            'img_src' =>$request->img_src,
-            'video_src' =>$request->video_src,
-            'yt_src' =>$request->yt_src,
-            'isCompleted' =>$request->isCompleted,
+        $postData = $request->validate([
+            'city_name' => ['required'],
 
         ]);
 
-        return redirect('/dashboard');
 
+        City::create([
+            'name' => $postData['city_name'],
 
+        ]);
+        return redirect()->route('cities.index');
     }
-
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($cityId)
+    public function show_city_info($cityId)
     {
-        $city = DB::table('city')->where('city_id', '=', $cityId)
+        $city_info = DB::table('city_infos')->where('city_id', '=', $cityId)
             ->get();
-        return $city ->toJSON(JSON_PRETTY_PRINT);
-
-
+        return Inertia::render('Admin/CRUD/Cities/Show', [
+            'city_info' => [$city_info]
+        ]);
+    }
+    public function show_heart_stroke($cityId)
+    {
+        $city_heart_stroke = DB::table('chron_favorites')->where('city_id', '=', $cityId)
+            ->get();
+        return Inertia::render('Admin/CRUD/Cities/Show', [
+            'city_heart_stroke' => [$city_heart_stroke]
+        ]);
+    }
+    public function show_locations($cityId)
+    {
+        $city_locations = DB::table('locations')->where('city_id', '=', $cityId)
+            ->get();
+        return Inertia::render('Admin/CRUD/Cities/Show', [
+            'city_heart_stroke' => [$city_locations]
+        ]);
+    }
+    public function show_music_group($cityId)
+    {
+        $city_music_groups = DB::table('music_groups')->where('city_id', '=', $cityId)
+            ->get();
+        return Inertia::render('Admin/CRUD/Cities/Show', [
+            'city_music_groups' => [$city_music_groups]
+        ]);
+    }
+    public function show_custom_data($cityId)
+    {
+        $city_custom_data = DB::table('custom_datas')->where('city_id', '=', $cityId)
+            ->get();
+        return Inertia::render('Admin/CRUD/Cities/Show', [
+            'city_custom_data' => [$city_custom_data]
+        ]);
     }
 
     /**

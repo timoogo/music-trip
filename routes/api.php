@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CitiesController;
+use App\Http\Controllers\OldCitiesController;
 use App\Http\Controllers\CitiesInfosController;
 use App\Http\Controllers\CitiesLocationsController;
 use App\Http\Controllers\CitiesHeartstrokeController;
@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-Route::apiResource('cities', CitiesController::class);
+Route::apiResource('cities', OldCitiesController::class);
 Route::apiResource('info', CitiesInfosController::class);
 Route::apiResource('locations', CitiesLocationsController::class);
 Route::apiResource('heartstroke', CitiesHeartstrokeController::class);
@@ -34,7 +34,7 @@ Route::apiResource('musicgroup', CitiesMusicGroupController::class);
 Route::apiResource('customdata', CitiesCustomDataController::class);
 
 /*
- * Route::apiResource('show/locations/{id}', [bababa::class, "show_locations"])->name("cities.locations");
-Route::apiResource('show/heartStroke/{id}', [bababa::class, "show_heart_stroke"])->name("cities.heartStroke");
-Route::apiResource('show/musicGroup/{id}', [bababa::class, "show_music_group"])->name("cities.musicGroup");
-Route::apiResource('show/customData/{id}', [bababa::class, "show_custom_data"])->name("cities.customData");*/
+ * Route::apiResource('show/locations/{id}', [citiesController::class, "show_locations"])->name("cities.locations");
+Route::apiResource('show/heartStroke/{id}', [citiesController::class, "show_heart_stroke"])->name("cities.heartStroke");
+Route::apiResource('show/musicGroup/{id}', [citiesController::class, "show_music_group"])->name("cities.musicGroup");
+Route::apiResource('show/customData/{id}', [citiesController::class, "show_custom_data"])->name("cities.customData");*/
