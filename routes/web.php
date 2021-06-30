@@ -41,7 +41,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/cities/create', [CitiesController::class, "create"])->name("cities.create");
     Route::get('/users/create', [UsersController::class, "create"])->name('users.create');
     Route::post('/users/save', [UsersController::class, "store"])->name('users.store');
+
     Route::post('/cities/save', [CitiesController::class, "store"])->name('cities.store');
+    Route::post('/info/save', [CitiesInfosController::class, "store"])->name('citiesinfo.store');
+
 
 
     // Route::post('/info', "CitiesInfosController@store");

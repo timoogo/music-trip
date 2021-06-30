@@ -24,19 +24,19 @@
                                 <th class="py-3 px-3 text-center w-2/5">Actions</th>
                             </tr>
                             </thead>
-                            <tbody class="text-gray-600 text-sm font-light">
+                            <tbody v-for="city in (citiesNames) " class="text-gray-600 text-sm font-light">
                             <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex items-center">
                                         <div class="mr-2">
-                                            <span class="font-medium">1</span>
+                                            <span class="font-medium">{{ city.id }}</span>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-left">
                                     <div class="flex items-center">
                                         <div class="mr-2">
-                                            <span>Paris</span>
+                                            <span>{{ city.name }}</span>
                                         </div>
                                     </div>
                                 </td>
@@ -49,7 +49,7 @@
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center">
-                                    <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Completed</span>
+                                    <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">{{ city }}</span>
                                 </td>
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-evenly mx-auto">
@@ -66,6 +66,7 @@
                                     </div>
                                 </td>
                             </tr>
+                            <!--
                             <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex items-center">
@@ -107,6 +108,7 @@
                                     </div>
                                 </td>
                             </tr>
+
                             <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex items-center">
@@ -519,7 +521,7 @@
                                     </div>
                                 </td>
                             </tr>
-
+        -->
                             </tbody>
                         </table>
                     </div>
@@ -537,6 +539,19 @@
         components: {
             AppLayout,
             Welcome,
+        },
+        data(){
+            return {
+                citiesNames:null,
+                cities:null
+            }
+        },
+        mounted() {
+            axios
+                .get('http://127.0.0.1:8000/api/info')
+                .then(response => {
+                    (this.citiesNames = response.data)
+                })
         },
 
     }

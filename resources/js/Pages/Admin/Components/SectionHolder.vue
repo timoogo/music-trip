@@ -7,20 +7,20 @@
     </div>
 </div>
 <div class="mt-5 md:mt-0 md:col-span-2">
-    <form>
-        <div class="px-4 py-5 bg-white sm:p-6 shadow sm:rounded-tl-md sm:rounded-tr-md">
-            <section-content class="my-8" title="Coup de coeur" content="Contenu de CDC"/>
-            <section-content class="my-8" title="Ville" content="Contenu de Ville" />
-            <section-content class="my-8" title="Groupes" content="Contenu de Groupes"/>
-            <section-content class="my-8" title="Lieux" content="Contenu de Lieux"/>
-            <section-content class="my-8" title="Custom" content="Contenu de Custom"/>
+    <form  @submit.prevent="postForms">
+        <div class="px-4 py-5 bg-white sm:p-6 shadow sm:rounded-tl-md sm:rounded-tr-md w-max">
+            <section-content class="my-8" ref_id="heartstroke" title="Coup de coeur"/>
+            <section-content class="my-8" ref="info" route="info" title="Ville"  />
+            <section-content class="my-8" ref_id="musicgroups" title="Groupes"/>
+            <section-content class="my-8" ref_id="locations" title="Lieux" />
+            <section-content class="my-8" ref_id="customdata" title="Custom"/>
         </div>
         <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md">
             <div class="mr-3">
-                <div class="text-sm text-gray-600" style="display: none;"> Sauvardé. </div>
+                <div class="text-sm text-gray-600" style="display: none;"> Sauvgardé. </div>
             </div>
             <button
-                type="submit"
+
                 class="inline-flex
                  items-center
                   px-4
@@ -57,40 +57,22 @@ export default {
     components: {SectionContent},
     data () {
         return {
-            mediaChecked:{
-                heart:{
-                    global:false,
-                    photos:false,
-                    videos:false,
-                    yt:false
-                },
-                city:{
-                    global: false,
-                    photos:false,
-                    videos:false,
-                    yt:false
-                },
-                location:{
-                    global:false,
-                    photos:false,
-                    videos:false,
-                    yt:false
-                },
-                group:{
-                    global: false,
-                    photos:false,
-                    videos:false,
-                    yt:false
-                },
-                custom:{
-                    global:false,
-                    photos:false,
-                    videos:false,
-                    yt:false
-                },
-            }
+
         }
     },
+    methods:{
+        postForms(){
+
+            for( const l of ['heartstroke',
+                'info',
+                'musicgroups',
+                'locations',
+                'customdata']){
+
+            }
+            this.$refs.info.handleSubmit();
+        }
+    }
 
 }
 </script>
