@@ -1,6 +1,6 @@
 <template>
     <ul v-if="notActive">
-        <li class="cursor-pointer"  @click="increment(), registerCity(city.id)"  v-for="city in citiesNames">{{ city.name }}</li>
+        <li class="cursor-pointer"  @click="increment(), registerCity(city.id)"  v-for="city in sortArrays(citiesNames)">{{ city.name }}</li>
 
     </ul>
 </template>
@@ -100,6 +100,9 @@ export default {
         }
     },
    methods:{
+       sortArrays(arrays) {
+           return _.orderBy(arrays, 'name', 'asc');
+       },
         showCity: function(event) {
            let value = event.currentTarget.id;
         this.clicked()
@@ -120,7 +123,9 @@ export default {
     mounted() {
         axios
             .get('http://127.0.0.1:8000/api/info')
-            .then(response => (this.citiesNames = response.data))
+            .then(response => {
+                (this.citiesNames = response.data)
+            })
     },
 
 }

@@ -538,6 +538,7 @@
             AppLayout,
             Welcome,
         },
+
     }
 </script>
 <style scoped>

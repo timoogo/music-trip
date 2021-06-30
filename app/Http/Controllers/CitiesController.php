@@ -6,7 +6,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\DB;
 use App\Models\City;
 
-class citiesController extends Controller
+class CitiesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,12 +21,12 @@ class citiesController extends Controller
                      'cities' => [$cities]
                  ]);*/
         //   return $cities->toJSON(JSON_PRETTY_PRINT);
-        $cities = DB::table('cities')
-
-            ->get();
-        return Inertia::render('Admin/Cities', [
+        $cities = DB::table('cities')->orderBy('id', 'DESC')->get();
+        print_r($cities);
+        return Inertia::render('Admin/Dashboard', [
             'cities' => [$cities]
         ]);
+
 
     }
     public function create(){
@@ -51,7 +51,7 @@ class citiesController extends Controller
             'name' => $postData['city_name'],
 
         ]);
-        return redirect()->route('cities.index');
+        return redirect()->route('dashboard');
     }
     /**
      * Display the specified resource.
