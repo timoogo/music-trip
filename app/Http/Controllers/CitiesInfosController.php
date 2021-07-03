@@ -16,12 +16,6 @@ class CitiesInfosController extends Controller
      */
     public function index ()
     {
-        /*      $cities = City::all();
-           //
-                 return Inertia::render('Admin/Cities', [
-                     'cities' => [$cities]
-                 ]);*/
-        //   return $cities->toJSON(JSON_PRETTY_PRINT);
         $cities_info = DB::table('city_infos')->get();
         return $cities_info;
     }
@@ -45,6 +39,7 @@ class CitiesInfosController extends Controller
             'img_src' =>$request->img_src,
             'video_src' =>$request->video_src,
             'yt_src' =>$request->yt_src,
+            'is_completed'=>$request->isCompleted
 
 
         ]);

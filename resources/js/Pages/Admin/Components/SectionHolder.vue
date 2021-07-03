@@ -8,7 +8,7 @@
 </div>
 <div class="mt-5 md:mt-0 md:col-span-2">
     <form  @submit.prevent="postForms">
-        <div class="px-4 py-5 bg-white sm:p-6 shadow sm:rounded-tl-md sm:rounded-tr-md w-max">
+        <div class="px-4 py-5 bg-white sm:p-6 shadow sm:rounded-tl-md sm:rounded-tr-md">
             <section-content class="my-8" ref_id="heartstroke" title="Coup de coeur"/>
             <section-content class="my-8" ref="info" route="info" title="Ville"  />
             <section-content class="my-8" ref_id="musicgroups" title="Groupes"/>

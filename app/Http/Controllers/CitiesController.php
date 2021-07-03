@@ -40,18 +40,18 @@ class CitiesController extends Controller
      */
     public function store(Request $request)
     {
-
-        $postData = $request->validate([
-            'city_name' => ['required'],
-
-        ]);
-
-
         City::create([
-            'name' => $postData['city_name'],
+
+            'city_id' => 1,
+            'name' => $request->name,
+            'lng' =>$request->lng,
+            'lat' =>$request->lat,
+            'video_src' =>$request->video_src,
+            'yt_src' =>$request->yt_src,
+            'is_completed'=>$request->isCompleted
+
 
         ]);
-        return redirect()->route('dashboard');
     }
     /**
      * Display the specified resource.
