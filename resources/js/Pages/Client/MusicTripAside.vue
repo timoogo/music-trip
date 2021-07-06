@@ -2,9 +2,9 @@
    <aside class="absolute right-0 top-36 p-3 w-1/2 h-5/6 mt-1 bg-black">
     <div class="flex flex-row justify-between">
         <Decrement v-if="currentStep > 0" @click="decrementCurrentStep"/>
-        <span class="text-white" v-if="currentStep > 0">{{  }}</span>
+        <span class="text-white" v-if="currentStep > 0">{{ selectedCity }}</span>
     </div>
-       <CitiesStep v-if="currentStep == 0" @increment="incrementCurrentStep" @registerCity="registerCurrentCity" />
+       <CitiesStep v-if="currentStep == 0"  @increment="incrementCurrentStep" @registerCity="registerCurrentCity" />
        <Sections  v-if="currentStep == 1" @increment="incrementCurrentStep" @display="getContent" />
        <Single v-if="currentStep > 1"/>
    </aside>

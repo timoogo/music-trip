@@ -1,5 +1,5 @@
 <template>
-<button class="text-white text-center my-6" @click="decrease">REVENIR EN ARRIRERE </button>
+<button class="uppercase text-white text-center my-6" @click="decrease">REVENIR EN arrière </button>
 </template>
 
 <script>

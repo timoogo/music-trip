@@ -1,9 +1,7 @@
 <template>
-
         <ul class="h-5/6">
             <li class=" text-white cursor-pointer"  @click="clicked(), increment(), display($parent.selectedCity, section.id)"  v-for="section in sections">{{ section.name }}</li>
         </ul>
-
 </template>
 
 <script>
@@ -35,7 +33,7 @@ export default {
             sections : {
                 0: {
                     id: "info",
-                    name: 'informations'
+                    name: 'Informations'
                 },
                 1: {
                     id: "locations",
@@ -43,19 +41,20 @@ export default {
                 },
                 2:
                     {
-                        id:'heartstroke',
-                    name: "Coup de coeur"
+                    id:'heartstroke',
+                    name: "Coups de coeur"
                 },
                 3: {id:"musicgroup",
-                    name: "Music group"
+                    name: "Groupes de musique"
                 },
                 4: {id:"customdata",
-                    name: "Info Suplementaires"
+                    name: "Bonus"
                 }
 
             }
         }
-        }
+        },
+
 }
 </script>
 

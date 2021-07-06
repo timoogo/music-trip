@@ -3,14 +3,14 @@
 <div class="md:col-span-1 flex justify-between">
     <div class="px-4 sm:px-0">
         <h3 class="text-lg font-medium text-gray-900">Ajout d'infos sur la ville </h3>
-        <p class="mt-1 text-sm text-gray-600">WIP</p>
+        <p class="mt-1 text-sm text-gray-600">Remplissez chaque rubrique de la ville, elles apparaîtront sur le site</p>
     </div>
 </div>
 <div class="mt-5 md:mt-0 md:col-span-2">
     <form  @submit.prevent="postForms">
         <div class="px-4 py-5 bg-white sm:p-6 shadow sm:rounded-tl-md sm:rounded-tr-md">
             <section-content class="my-8" ref_id="heartstroke" title="Coup de coeur"/>
-            <section-content class="my-8" ref="info" route="info" title="Ville"  />
+            <section-content class="my-8" ref_id="info" route="info" title="Ville"  />
             <section-content class="my-8" ref_id="musicgroups" title="Groupes"/>
             <section-content class="my-8" ref_id="locations" title="Lieux" />
             <section-content class="my-8" ref_id="customdata" title="Custom"/>

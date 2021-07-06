@@ -1,6 +1,6 @@
 <template>
     <ul v-if="notActive">
-        <li class="cursor-pointer"  @click="increment(), registerCity(city.id)"  v-for="city in sortArrays(citiesNames)">{{ city.name }}</li>
+        <li class="cursor-pointer"  @click="increment(), registerCity(city.id), showCity(city.name)"  v-for="city in sortArrays(citiesNames)">{{ city.name }}</li>
 
     </ul>
 </template>
@@ -11,7 +11,7 @@ export default {
     data() {
         return {
             citiesNames: null,
-            whatIsSelected:[],
+            whatIsSelected:null,
             notActive:true,
 
         }
@@ -19,10 +19,6 @@ export default {
     methods:{
         sortArrays(arrays) {
             return _.orderBy(arrays, 'name', 'asc');
-        },
-        showCity: function(event) {
-            let value = event.currentTarget.id;
-            this.clicked()
         },
         clicked() {
             this.notActive = !this.notActive

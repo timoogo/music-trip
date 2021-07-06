@@ -12,7 +12,7 @@
                         <div class="md:col-span-1 flex justify-between">
                             <div class="px-4 sm:px-0">
                                 <h3 class="text-lg font-medium text-gray-900"> Informations du profile </h3>
-                                <p class="mt-1 text-sm text-gray-600"> Mettez les informations liées au profile . </p>
+                                <p class="mt-1 text-sm text-gray-600"> Mettez les informations liées au profile. </p>
                             </div>
                             <div class="px-4 sm:px-0"></div>
                         </div>
@@ -24,7 +24,7 @@
                                         <!--v-if-->
                                         <!-- Name -->
                                         <div class="col-span-6 sm:col-span-4">
-                                            <label class="block font-medium text-sm text-gray-700" for="name"><span>Name</span></label>
+                                            <label class="block font-medium text-sm text-gray-700" for="name"><span>Nom du chroniqueur</span></label>
                                             <input v-model="form.name" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="name" type="text" autocomplete="name" tabindex="1">
                                             <div class="mt-2" style="display: none;">
                                                 <p class="text-sm text-red-600"></p>
@@ -32,7 +32,7 @@
                                         </div>
                                         <!-- Email -->
                                         <div class="col-span-6 sm:col-span-4">
-                                            <label class="block font-medium text-sm text-gray-700" for="email"><span>Email</span></label>
+                                            <label class="block font-medium text-sm text-gray-700" for="email"><span>Email du chroniqueur</span></label>
                                             <input v-model="form.email" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="email" type="email" tabindex="2">
                                             <div class="mt-2" style="display: none;">
                                                 <p class="text-sm text-red-600"></p>
@@ -40,7 +40,7 @@
                                         </div>
                                         <div class="col-span-6 sm:col-span-4">
                                             <label class="block font-medium text-sm text-gray-700" for="password">
-                                                <span>Password</span>
+                                                <span>Mot de passe</span>
                                             </label>
                                             <input v-model="form.password" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="password" type="password" tabindex="3">
                                             <div class="mt-2" style="display: none;">
@@ -64,6 +64,8 @@
                                         <div class="bg-white border-2 rounded border-gray-400 w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500">
                                             <input  v-model="form.is_super_chroniqueur" type="checkbox" class="text-indigo-600 rounded" id="is_super_chroniqueur">
                                         </div>
+
+
                                         <span class="select-none">Super chroniqueur</span>
                                     </label>
                                 </div>

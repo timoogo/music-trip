@@ -23,7 +23,7 @@
                                 <th class="py-3 px-3 text-center w-2/5">Actions</th>
                             </tr>
                             </thead>
-                            <tbody v-for="city in (citiesNames) " class="text-gray-600 text-sm font-light">
+                            <tbody v-for="city in citiesNames " class="text-gray-600 text-sm font-light">
                             <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex items-center">
@@ -48,13 +48,13 @@
                                     </div>
                                 </td>
                                 <td v-if="city.isCompleted == 1" class="py-3 px-6 text-center">
-                                    <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Completed</span>
+                                    <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Completé</span>
                                 </td>
                                 <td v-else-if="city.isCompleted == 0" class="py-3 px-6 text-center">
-                                    <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">Uncompleted</span>
+                                    <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">Pas complété</span>
                                 </td>
                                 <td v-else-if="city.isCompleted == null" class="py-3 px-6 text-center">
-                                    <span class="bg-yellow-400 text-orange-900 py-1 px-3 rounded-full text-xs">Error</span>
+                                    <span class="bg-yellow-400 text-orange-900 py-1 px-3 rounded-full text-xs">Erreur</span>
                                 </td>
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-evenly mx-auto">
