@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="mt-5 md:mt-0 md:col-span-2">
-            <form>
+            <form @submit.prevent="handleSubmit">
                 <div class="px-4 py-5 bg-white sm:p-6 shadow sm:rounded-tl-md sm:rounded-tr-md">
                     <label class="inline-flex items-center" for="agree">
                         <input value="agree"  v-model="canPublish"  type="checkbox" class="form-checkbox text-indigo-600 rounded" id="agree">
@@ -33,6 +33,12 @@ export default {
       return{
         canPublish: false
       }
+    },
+    methods:{
+        async  handleSubmit(){
+
+            let response = await this.$inertia.post('/cities/save', this.canPublish)
+        }
     }
 }
 </script>

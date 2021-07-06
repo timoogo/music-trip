@@ -1,6 +1,6 @@
 <template>
     <ul v-if="notActive">
-        <li class="cursor-pointer"  @click="increment(), registerCity(city.id), showCity(city.name)"  v-for="city in sortArrays(citiesNames)">{{ city.name }}</li>
+        <li class="cursor-pointer"  @click="increment(), registerCity(city.id)"  v-for="city in sortArrays(citiesNames)">{{ city.name }}</li>
 
     </ul>
 </template>

@@ -24,6 +24,7 @@ export default {
         display(cityId, sectionName){
             console.log( sectionName + " clicked")
             this.$emit('display', cityId, sectionName)
+
         }
     },
     data(){
@@ -51,7 +52,8 @@ export default {
                     name: "Bonus"
                 }
 
-            }
+            },
+
         }
         },
 

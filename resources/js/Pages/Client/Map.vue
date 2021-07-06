@@ -497,10 +497,11 @@ export default{
 }
 </script>
 <style lang="scss" scoped>
-GoogleMap{
 
+a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"] {
+    display: none !important;
 }
-    .map {
-
-    }
+.gmnoprint a,.gmnoprint span,.gm-style-cc {
+    display: none;
+}
 </style>

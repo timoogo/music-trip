@@ -35,7 +35,7 @@
                                 <td class="py-3 px-6 text-left">
                                     <div class="flex items-center">
                                         <div class="mr-2">
-                                            <span>{{ city.name }}</span>
+                                            <span>{{ city.title }}</span>
                                         </div>
                                     </div>
                                 </td>
@@ -47,10 +47,10 @@
                                        <span class="bg-red-200 px-5 py-3 text-sm shadow-sm font-medium tracking-wider border text-gray-100 rounded-full hover:shadow-lg hover:bg-gray-800">Lieux</span>
                                     </div>
                                 </td>
-                                <td v-if="city.isCompleted == 1" class="py-3 px-6 text-center">
+                                <td v-if="city.isCompleted == true" class="py-3 px-6 text-center">
                                     <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Completé</span>
                                 </td>
-                                <td v-else-if="city.isCompleted == 0" class="py-3 px-6 text-center">
+                                <td v-else-if="city.isCompleted == false" class="py-3 px-6 text-center">
                                     <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">Pas complété</span>
                                 </td>
                                 <td v-else-if="city.isCompleted == null" class="py-3 px-6 text-center">

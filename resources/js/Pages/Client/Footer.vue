@@ -1,5 +1,5 @@
 <template>
-    <footer class=" -bottom-12 h-12  z-50 absolute bottom- bg-white w-full pt-3">
+    <footer class="bg-gray-800 text-white py-3 px-4 text-center fixed left-0 bottom-0 right-0 z-40">
         <p class="text-center">
             intégré par
             <inertia-link class=" transition duration-1000 ease-in-out hover:underline hover:text-red-600 text-green-400" href="https://github.com/timoogo/">
@@ -17,6 +17,6 @@ name: "Footer"
 
 <style scoped>
 footer{
-    bottom: -25px;
+ /*   bottom: -25px; */
 }
 </style>

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\citiesController;
+use App\Http\Controllers\CitiesController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -43,7 +43,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::post('/users/save', [UsersController::class, "store"])->name('users.store');
 
     Route::post('/cities/save', [CitiesController::class, "store"])->name('cities.store');
-    Route::post('/info/save', [CitiesInfosController::class, "store"])->name('citiesinfo.store');
+    Route::post('/info/save', [CitiesInfosController::class, "store"])->name('cities_info.store');
 
 
 
