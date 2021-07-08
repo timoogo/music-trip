@@ -48,6 +48,7 @@
                                         </div>
                                         <div class="w-4 mx-2 transform hover:text-purple-500">
                                             <a href="#" class="bg-black hover:bg-grey-700 text-white font-bold py-2 px-4 rounded">SUPPRIMER</a>
+
                                         </div>
                                         <div class="w-4 mx-2 transform hover:text-purple-500">
                                             <a href="#" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">MODIFIER</a>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\DB;
 use \App\Models\CityInfo;
@@ -57,9 +58,17 @@ class CitiesInfosController extends Controller
      */
     public function show($cityId)
     {
-        $city_info = DB::table('city_infos')->where('city_id', '=', $cityId)
-            ->get();
-        return $city_info ->toJSON(JSON_PRETTY_PRINT);
+//if headers json
+            $city_info = DB::table('city_infos')->where('city_id', '=', $cityId)
+                ->get();
+
+
+                // return $city_info->toJSON(JSON_PRETTY_PRINT);
+
+
+
+                 return Inertia::render('Admin/CRUD/Cities/Show.vue', ["city_info" => $city_info]);
+
 
 
     }

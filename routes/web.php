@@ -36,15 +36,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/users', [UsersController::class, "index"])->name("users.index");
     Route::get('/users/create', [UsersController::class, "store"])->name("users.create");
-
     Route::get('/cities', [CitiesController::class, "index"])->name("cities.index");
     Route::get('/cities/create', [CitiesController::class, "create"])->name("cities.create");
     Route::get('/users/create', [UsersController::class, "create"])->name('users.create');
     Route::post('/users/save', [UsersController::class, "store"])->name('users.store');
+    Route::delete('/users/destroy/{id}', [UsersController::class, "destroy"])->name('users.destroy');
 
     Route::post('/cities/save', [CitiesController::class, "store"])->name('cities.store');
     Route::post('/info/save', [CitiesInfosController::class, "store"])->name('cities_info.store');
-
+    Route::get('/cities/{id}', [CitiesInfosController::class, "show"])->name('cities.show');
 
 
     // Route::post('/info', "CitiesInfosController@store");

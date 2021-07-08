@@ -1,26 +1,27 @@
 <template>
-    <div  v-if="$parent.currentStep == 2" @click="theContent($parent.selectedCity)" class="overflow-auto h-full">
+    <div  v-if="$parent.currentStep == 2" @click="theContent($parent.selectedCity)" class="overflow-auto max-h-max h-full	 pb-96">
         <div  v-for="el in $parent.contentData">
-                <h1 class="text-white text-center text-5xl my-9">{{  el.title}}</h1>
-                <div>
-                    <img v-if="el.img_src != null" :src="el.img_src" />
-                    <p class="text-white">{{ el.description}}</p>
-                </div>
+            <h1 class="text-white text-center text-5xl my-9">{{  el.title}}</h1>
+            <div>
+                <img v-if="el.img_src != null" :src="el.img_src" />
+                <p class="text-white">{{ el.description}}</p>
+            </div>
 
-                <div v-if="el.video_src != null" >
-                    <hr class="my-9"/>
-                    <span class="block my-9 mx-auto text-center text-white">Ressource personnelle </span>
-                    <video class="mx-auto" allowfullscreen allow="autoplay" controls width="500">
-                        <source :src="el.video_src"/>
-                    </video>
-                </div>
+            <div v-if="el.video_src != null" >
                 <hr class="my-9"/>
-                <div class="my-9" v-if="el.yt_src != null">
-                    <span class="block my-9 mx-auto text-center text-white">Ressource de Youtube</span>
-                    <video class="mx-auto" allowfullscreen allow="autoplay" controls width="500">
-                        <source :src="el.video_yt"/>
-                    </video>
-                </div>
+                <span class="block my-9 mx-auto text-center text-white">Ressource personnelle </span>
+                <video class="mx-auto" allowfullscreen allow="autoplay" controls width="500">
+                    <source :src="el.video_src"/>
+                </video>
+            </div>
+            <hr class="my-9"/>
+            <div class="my-9" v-if="el.yt_src != null">
+                <span class="block my-9 mx-auto text-center text-white">Ressource de Youtube</span>
+                <video class="mx-auto" allowfullscreen allow="autoplay" controls width="500">
+                    <source :src="el.video_yt"/>
+                </video>
+            </div>
+
         </div>
     </div>
 </template>

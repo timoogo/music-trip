@@ -59,7 +59,8 @@
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-evenly mx-auto">
                                         <div class="w-4 mx-2 transform hover:text-purple-500">
-                                            <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">VOIR</a>
+                                    <!--        <a href="#" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">VOIR</a> -->
+                                            <inertia-link :href="route('cities.show', {id: city.id})" :data="city" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">VOIR</inertia-link>
                                         </div>
 
                                         <div class="w-4 mx-2 transform hover:text-purple-500">

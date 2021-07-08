@@ -62,13 +62,18 @@ class OldCitiesController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return string
      */
     public function show($cityId)
     {
-        $city = DB::table('city')->where('city_id', '=', $cityId)
-            ->get();
-        return $city ->toJSON(JSON_PRETTY_PRINT);
+        $city = DB::table('cities')->where('id', '=', $cityId)->get();
+        $cityCount = $city->count();
+        if ($cityId > $cityCount) {
+            return "error, la ville n'existe pas";
+        } else {
+            return $city->toJSON(JSON_PRETTY_PRINT);
+        }
+
 
 
     }

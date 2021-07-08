@@ -1,5 +1,5 @@
 <template>
-   <aside class="absolute right-0 top-36 p-3 w-1/2 h-5/6 mt-1 bg-black">
+   <aside class="absolute right-0 top-36 p-3 w-1/2 h-full mt-1 bg-black">
     <div class="flex flex-row justify-between">
         <Decrement v-if="currentStep > 0" @click="decrementCurrentStep"/>
         <span class="text-white" v-if="currentStep > 0">{{ selectedCity }}</span>
