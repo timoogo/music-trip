@@ -23,6 +23,7 @@ Route::get('/', function () {
     return Inertia::render('index', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
+        'hasCities' => Route::has('cities'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
